@@ -107,6 +107,7 @@
 			// Vars.
 				var $form = document.querySelectorAll('#signup-form')[0],
 					$submit = document.querySelectorAll('#signup-form input[type="submit"]')[0],
+					$id = document.querySelectorAll('#signup-form input[id="sublogin"]')[0],
 					$message;
 
 			// Bail if addEventListener isn't supported.
@@ -159,8 +160,8 @@
 								$submit.disabled = false;
 
 							// Show message.
-								$message._show('success', 'Thank you!');
-								//$message._show('failure', 'Something went wrong. Please try again.');
+								$message._show('success', '로그인 완료!');
+								$message._show('failure', '로그인이 실패했습니다. 다시 입력해주세요');
 
 						}, 750);
 
