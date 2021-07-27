@@ -14,54 +14,49 @@
 	<body class="is-preload">
 		<div id="page-wrapper">
 
-			<!-- Header -->
-				<header id="header">
-					<h1><a href="index.html">Alpha</a> by HTML5 UP</h1>
-					<nav id="nav">
-						<ul>
-							<li><a href="index.html">Home</a></li>
-							<li>
-								<a href="#" class="icon solid fa-angle-down">Layouts</a>
-								<ul>
-									<li><a href="generic.html">Generic</a></li>
-									<li><a href="contact.html">Contact</a></li>
-									<li><a href="elements.html">Elements</a></li>
-									<li>
-										<a href="#">Submenu</a>
-										<ul>
-											<li><a href="#">Option One</a></li>
-											<li><a href="#">Option Two</a></li>
-											<li><a href="#">Option Three</a></li>
-											<li><a href="#">Option Four</a></li>
-										</ul>
-									</li>
-								</ul>
-							</li>
-							<li><a href="#" class="button">Sign Up</a></li>
-						</ul>
-					</nav>
-				</header>
+				<!-- Header -->
+		<header id="header" class="alt">
 
+			<nav id="nav">
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="#" class="icon solid fa-angle-down">Menu</a>
+						<ul>
+							<li><a href="generic.html">Generic</a></li>
+							<li><a href="contact.html">Contact</a></li>
+							<li><a href="elements.html">Elements</a></li>
+							<li><a href="#">고객센터</a>
+								<ul>
+									<li><a href="#">자주 묻는 질문</a></li>
+									<li><a href="service.html">민원 게시판</a></li>
+
+								</ul></li>
+						</ul></li>
+					<li><a href="login.html" class="button">Login</a></li>
+					<li><a href="Map.jsp" class="button">Map</a></li>
+				</ul>
+			</nav>
+		</header>
 			<!-- Main -->
 				<section id="main" class="container medium">
 					<header>
-						<h2>Contact Us</h2>
-						<p>Tell us what you think about our little operation.</p>
+						<h2>문의하기</h2>
+						<p>비판해주셔서 감사합니다.</p>
 					</header>
 					<div class="box">
 						<form method="post" action="#">
 							<div class="row gtr-50 gtr-uniform">
-								<div class="col-6 col-12-mobilep">
-									<input type="text" name="name" id="name" value="" placeholder="Name" />
+								<div class="col-12-mobilep">
+									<input type="text" name="name" id="name" value="" placeholder="제목을 입력해주세요." />
 								</div>
 								<div class="col-6 col-12-mobilep">
-									<input type="email" name="email" id="email" value="" placeholder="Email" />
+									<input type="email" name="email" id="email" value="" placeholder="기기번호" />
+								</div>
+								<div class="col-6 col-12">
+									<input type="text" name="subject" id="subject" value="" placeholder="이메일" />
 								</div>
 								<div class="col-12">
-									<input type="text" name="subject" id="subject" value="" placeholder="Subject" />
-								</div>
-								<div class="col-12">
-									<textarea name="message" id="message" placeholder="Enter your message" rows="6"></textarea>
+									<textarea name="message" id="message" placeholder="내용을 입력해주세요." rows="6"></textarea>
 								</div>
 								<div class="col-12">
 									<ul class="actions special">
