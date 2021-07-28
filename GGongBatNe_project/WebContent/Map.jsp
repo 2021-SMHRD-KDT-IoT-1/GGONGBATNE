@@ -18,14 +18,14 @@
 				<div id="map" style="width: 800px; height: 600px; background-color: black; margin-left: 20px;"></div>
 			
 			</div>
-
+ 
 <script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/jquery.scrollex.min.js"></script>
+	 <script src="assets/js/jquery.scrollex.min.js"></script>
 	<script src="assets/js/jquery.scrolly.min.js"></script>
 	<script src="assets/js/browser.min.js"></script>
 	<script src="assets/js/breakpoints.min.js"></script>
 	<script src="assets/js/util.js"></script>
-	<script src="assets/js/main.js"></script>
+	<script src="assets/js/main.js"></script>  
 	<script>
    var lat_1 = 35.19444429414635;
    var lng_1 = 126.9530589614602;
@@ -60,6 +60,29 @@
 		    var marker = new kakao.maps.Marker({position: coordinate});
 		    marker.device = coords.device;
 			marker.setMap(_kakaoMap);
+			var iwContent = '<div style="padding:5px;">Hello World!</div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+		    iwRemoveable = true; 
+			var infowindow = new kakao.maps.InfoWindow({
+			    content : iwContent,
+			    removable : iwRemoveable
+			});
+			var iwContent = '<div style="padding:5px;">Hello World!</div>';
+			var infowindow = new kakao.maps.InfoWindow({
+			    content : iwContent
+			});
+
+			// 마커에 마우스오버 이벤트를 등록합니다
+			kakao.maps.event.addListener(marker, 'mouseover', function() {
+			  // 마커에 마우스오버 이벤트가 발생하면 인포윈도우를 마커위에 표시합니다
+			    infowindow.open(map, marker);
+			});
+
+			// 마커에 마우스아웃 이벤트를 등록합니다
+			kakao.maps.event.addListener(marker, 'mouseout', function() {
+			    // 마커에 마우스아웃 이벤트가 발생하면 인포윈도우를 제거합니다
+			    infowindow.close();
+			});
+			
 			var co = new kakao.maps.CustomOverlay({
 				position: coordinate,
 				content: overlay
