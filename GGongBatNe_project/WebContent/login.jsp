@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <!DOCTYPE HTML>
 <!--
 	Eventually by HTML5 UP
@@ -15,12 +17,12 @@
 
 		<!-- Header -->
 		<header id="header">
-			<h1>로그인</h1>
-			<p>무지성 로그인 쌉가능<br />
-			살려주세요제발 </p>
+			<h1>�α���</h1>
+			<p>������ �α��� �԰���<br />
+			����ּ������� </p>
 		</header>
 
-		<!-- 메뉴 -->
+		<!-- �޴� -->
 		<header id="navigation" class="alt">
 			<h1><a href="index.html">Home</a></h1>
 			<nav id="nav">
@@ -41,18 +43,18 @@
 			</nav>
 		</header>
 
-		<!-- 로그인 모듈 -->
+		<!-- �α��� ��� -->
 		<div>
 			<form id="signup-form" method="post" action="#">
-				<input type="text" name="Id" id="Id" placeholder="사원번호를 입력하세요" />
-				<input type="password" name="pw" id="pw" placeholder="비밀번호를 입력하세요" />
-				<input type="submit" id = "sublogin" value="로그인" />				
-		<input type = "button" id = "subJoin" value = "회원가입" style="background-color: orange " />
+				<input type="text" name="Id" id="Id" placeholder="�����ȣ�� �Է��ϼ���" />
+				<input type="password" name="pw" id="pw" placeholder="��й�ȣ�� �Է��ϼ���" />
+				<input type="submit" id = "sublogin" value="�α���" />				
+		<input type = "button" id = "subJoin" value = "ȸ������" style="background-color: orange " />
 			</form>
 		</div>
 
 		<!-- Scripts -->
-		<!-- 로그인 자바스크립트에서 로그인되면 로그인 되었습니다 추가햇는데 데이터 받아서 연동 시켜야될듯 -->
+		<!-- �α��� �ڹٽ�ũ��Ʈ���� �α��εǸ� �α��� �Ǿ����ϴ� �߰��޴µ� ������ �޾Ƽ� ���� ���Ѿߵɵ� -->
 		<script src="assets/js/jquery.min.js"></script>
 		<script src="assets/js/jquery.scrollex.min.js"></script>
 		<script src="assets/js/jquery.scrolly.min.js"></script>

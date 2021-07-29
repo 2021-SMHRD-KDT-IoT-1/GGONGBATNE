@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 <!DOCTYPE HTML>
 
 <html>
@@ -16,20 +18,16 @@
 
 			<nav id="nav">
 				<ul>
-					<li><a href="index.html">Home</a></li>
+					<li><a href="index.jsp">Home</a></li>
 					<li><a href="#" class="icon solid fa-angle-down">Menu</a>
 						<ul>
-							<li><a href="generic.html">Generic</a></li>
-							<li><a href="contact.html">Contact</a></li>
-							<li><a href="elements.html">Elements</a></li>
-							<li><a href="#">∞Ì∞¥ºæ≈Õ</a>
-								<ul>
-									<li><a href="#">¿⁄¡÷ πØ¥¬ ¡˙πÆ</a></li>
-									<li><a href="service.html">πŒø¯ ∞‘Ω√∆«</a></li>
-
-								</ul></li>
+							<li><a href="generic.jsp">Generic</a></li>
+							<li><a href="contact.jsp">Contact</a></li>
+							<li><a href="elements.jsp">Elements</a></li>
+							<li><a href="service.jsp">Í≥†Í∞ùÏÑºÌÑ∞</a></li>
+								
 						</ul></li>
-					<li><a href="login.html" class="button">Login</a></li>
+					<li><a href="login.jsp" class="button">Login</a></li>
 					<li><a href="Map.jsp" class="button">Map</a></li>
 				</ul>
 			</nav>
@@ -38,7 +36,7 @@
 		<!-- Banner -->
 		<section id="banner">
 			<h2>GGongBatNe</h2>
-			<p>≤«√  √≥∏Æ NO.1</p>
+			<p>Korea NO.1</p>
 
 			<ul class="actions special">
 				<li><a href="#" class="button primary">HOME</a></li>
