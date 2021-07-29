@@ -1,13 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="utf-8"%>
-<!DOCTYPE HTML>
-<!--
-	Alpha by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+	pageEncoding="EUC-KR"%>
+<!DOCTYPE html>
 <html>
-
 <style>
 div.row {
 	width: 100%;
@@ -30,106 +24,105 @@ div.right {
 }
 </style>
 
-	<head>
-		<title>Generic - Alpha by HTML5 UP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	
-	<body class="is-preload">
-	
-	<script type='text/javascript'
-				src='//dapi.kakao.com/v2/maps/sdk.js?appkey=e99022b6f91dd955ccad95591a8ecb63'></script>
-		<div id="page-wrapper">
+<head>
+<title>Map</title>
+<meta charset="EUC-KR" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, user-scalable=no" />
+<link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body class="is-preload">
+	<div id="page-wrapper">
 
 		<!-- Header -->
-		<header id="header" class="alt">
-
+		<header id="header">
+			<h1>
+				<a href="index.jsp">Alpha</a> by HTML5 UP
+			</h1>
 			<nav id="nav">
 				<ul>
-					<li><a href="index.jsp">Home</a></li>
-					<li><a href="#" class="icon solid fa-angle-down">Menu</a>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="#" class="icon solid fa-angle-down">Layouts</a>
 						<ul>
-							<li><a href="generic.jsp">ì§€ë„</a></li>
-							<li><a href="service.jsp">ê³ ê°ì„¼í„°</a></li>
-								
+							<li><a href="Map.jsp">Generic</a></li>
+							<li><a href="contact.jsp">Contact</a></li>
+							<li><a href="elements.jsp">Elements</a></li>
+							<li><a href="#">Submenu</a>
+								<ul>
+									<li><a href="#">Option One</a></li>
+									<li><a href="#">Option Two</a></li>
+									<li><a href="#">Option Three</a></li>
+									<li><a href="#">Option Four</a></li>
+								</ul></li>
 						</ul></li>
-					<li><a href="login.jsp" class="button">Login</a></li>
+					<li><a href="#" class="button">Sign Up</a></li>
 				</ul>
 			</nav>
 		</header>
 
-			<!-- Main -->
-				<section id="main" class="container">
-					<header>
-						<h2>Generic</h2>
-						<p>A generic page for every non-generic situation.</p>
-					</header>
-					<div class="box">
-						
-						
-						
-							<!-- ì‘ì—… ë¶€ë¶„ -->
-						
-				
+
+		<body>
+
+			<meta name="viewport"
+				content="width=device-width, initial-scale=1, user-scalable=no" />
+			<script type='text/javascript'
+				src='//dapi.kakao.com/v2/maps/sdk.js?appkey=c396fe0efc7b0e5f37418f17f1fd034d'></script>
+
+			<section id="intro" class="wrapper style1 fullscreen fade-up">
+				<div class="inner" style="padding: 2em !important;">
+
+					<p>½Ç½Ã°£ À§Ä¡È®ÀÎÇÏ±â</p>
+					<div class="left" style="padding: 2em !important;">
 						<div id="map"
-							style="width: 700px; height: 550px; background-color: black; "></div>
-					
-						
-						
+							style="width: 800px; height: 550px; background-color: black; margin-left: 20px;"></div>
+					</div>
+					<div class="right" id="device_div"
+						style="width: 50%; height: 30em; overflow: auto">
 						<div id="device_div"
-							style="width: 500px; height: 1000px; overflow: auto">
+							style="width: 100%; height: 30cm; overflow: auto">
 							<table id="kkk">
 								<thead>
-									<!-- ì²«ë²ˆì§¸ í–‰ -->
+									<!-- Ã¹¹øÂ° Çà -->
 									<tr>
 										<td>No.</td>
-										<td>ê¸°ê¸°ë²ˆí˜¸</td>
-										<td>ê³ ì¥ì—¬ë¶€</td>
-										<td>ë Œíƒˆ</td>
-										<td>ê³ ì¥</td>
+										<td>±â±â¹øÈ£</td>
+										<td>°íÀå¿©ºÎ</td>
+										<td>·»Å»</td>
+										<td>°íÀå</td>
 										<td><input type='checkbox' id="del_check_all"
-											style='margin-right: 0 !important; appearance: auto !important; opacity: 100 !important;' />ì‚­ì œ</td>
+											style='margin-right: 0 !important; appearance: auto !important; opacity: 100 !important;' />»èÁ¦</td>
 									</tr>
 								</thead>
 
 							</table>
 						</div>
-						
-						
-						
-						
+			</section>
+			<section id="main" class="container">
+									
+						<h3>Ã¤¿ö ³Ö¾î¾ßÇÒ ³»¿ë1</h3>
+						<p>³»¿ë1</p>
+						<div class="row">
+							<div class="row-6 row-12-mobilep">
+								<h3>Ã¤¿ö ³Ö¾î¾ßÇÒ ³»¿ë2</h3>
+								<p>³»¿ë2</p>
+							</div>
+							<div class="row-6 row-12-mobilep">
+								<h3>Ã¤¿ö ³Ö¾î¾ßÇÒ ³»¿ë3</h3>
+								<p>³»¿ë3</p>
+							</div>
+						</div>
 					</div>
 				</section>
 
-			<!-- Footer -->
-				<footer id="footer">
-					<ul class="icons">
-						<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-						<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-						<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-						<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-						<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
-						<li><a href="#" class="icon brands fa-google-plus"><span class="label">Google+</span></a></li>
-					</ul>
-					<ul class="copyright">
-						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-					</ul>
-				</footer>
 
-		</div>
 
-		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-			
-			
 			<script>
 				var lat_1 = 35.19444429414635;
 				var lng_1 = 126.9530589614602;
@@ -197,7 +190,7 @@ div.right {
 									});
 									marker.device = coords.device;
 									marker.setMap(_kakaoMap);
-									var iwContent = '<div style="padding:5px;">Hello World!</div>', // ì¸í¬ìœˆë„ìš°ì— í‘œì¶œë  ë‚´ìš©ìœ¼ë¡œ HTML ë¬¸ìì—´ì´ë‚˜ document elementê°€ ê°€ëŠ¥í•©ë‹ˆë‹¤
+									var iwContent = '<div style="padding:5px;">Hello World!</div>', // ÀÎÆ÷À©µµ¿ì¿¡ Ç¥ÃâµÉ ³»¿ëÀ¸·Î HTML ¹®ÀÚ¿­ÀÌ³ª document element°¡ °¡´ÉÇÕ´Ï´Ù
 									iwRemoveable = true;
 									var infowindow = new kakao.maps.InfoWindow(
 											{
@@ -210,17 +203,17 @@ div.right {
 												content : iwContent
 											});
 
-									// ë§ˆì»¤ì— ë§ˆìš°ìŠ¤ì˜¤ë²„ ì´ë²¤íŠ¸ë¥¼ ë“±ë¡í•©ë‹ˆë‹¤
+									// ¸¶Ä¿¿¡ ¸¶¿ì½º¿À¹ö ÀÌº¥Æ®¸¦ µî·ÏÇÕ´Ï´Ù
 									kakao.maps.event.addListener(marker,
 											'mouseover', function() {
-												// ë§ˆì»¤ì— ë§ˆìš°ìŠ¤ì˜¤ë²„ ì´ë²¤íŠ¸ê°€ ë°œìƒí•˜ë©´ ì¸í¬ìœˆë„ìš°ë¥¼ ë§ˆì»¤ìœ„ì— í‘œì‹œí•©ë‹ˆë‹¤
+												// ¸¶Ä¿¿¡ ¸¶¿ì½º¿À¹ö ÀÌº¥Æ®°¡ ¹ß»ıÇÏ¸é ÀÎÆ÷À©µµ¿ì¸¦ ¸¶Ä¿À§¿¡ Ç¥½ÃÇÕ´Ï´Ù
 												infowindow.open(map, marker);
 											});
 
-									// ë§ˆì»¤ì— ë§ˆìš°ìŠ¤ì•„ì›ƒ ì´ë²¤íŠ¸ë¥¼ ë“±ë¡í•©ë‹ˆë‹¤
+									// ¸¶Ä¿¿¡ ¸¶¿ì½º¾Æ¿ô ÀÌº¥Æ®¸¦ µî·ÏÇÕ´Ï´Ù
 									kakao.maps.event.addListener(marker,
 											'mouseout', function() {
-												// ë§ˆì»¤ì— ë§ˆìš°ìŠ¤ì•„ì›ƒ ì´ë²¤íŠ¸ê°€ ë°œìƒí•˜ë©´ ì¸í¬ìœˆë„ìš°ë¥¼ ì œê±°í•©ë‹ˆë‹¤
+												// ¸¶Ä¿¿¡ ¸¶¿ì½º¾Æ¿ô ÀÌº¥Æ®°¡ ¹ß»ıÇÏ¸é ÀÎÆ÷À©µµ¿ì¸¦ Á¦°ÅÇÕ´Ï´Ù
 												infowindow.close();
 											});
 
@@ -245,11 +238,10 @@ div.right {
 												$("#statediv").text(avail + "/" + total);
 									        },
 									        error:function(a, b, c){
-									            alert("ì—ëŸ¬ê°€ ë°œìƒí•˜ì˜€ìŠµë‹ˆë‹¤.");
+									            alert("¿¡·¯°¡ ¹ß»ıÇÏ¿´½À´Ï´Ù.");
 									    	}
 										}); */
 								});
 			</script>
-
-	</body>
+		</body>
 </html>
