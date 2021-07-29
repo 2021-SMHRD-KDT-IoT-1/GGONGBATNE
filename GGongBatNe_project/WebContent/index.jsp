@@ -110,10 +110,8 @@
 					<section class="box special">
 						<span class="image featured"><img src="images/pic02.jpg"
 							alt="" /></span>
-						<h3>Sed lorem adipiscing</h3>
-						<p>Integer volutpat ante et accumsan commophasellus sed
-							aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis
-							accumsan dolore magna aliquam veroeros.</p>
+						<h3>제1회 꽁초 아이디어 공모전</h3>
+						<p>친환경적이고 기술적인 아이디어라면 누구나 신청가능 총 상금 1500만원!!</p>
 						<ul class="actions special">
 							<li><a href="#" class="button alt">Learn More</a></li>
 						</ul>
@@ -125,10 +123,9 @@
 					<section class="box special">
 						<span class="image featured"><img src="images/pic03.jpg"
 							alt="" /></span>
-						<h3>Accumsan integer</h3>
-						<p>Integer volutpat ante et accumsan commophasellus sed
-							aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis
-							accumsan dolore magna aliquam veroeros.</p>
+						<h3>꽁초 줍고 용돈 벌자!!!</h3>
+						<p>꽁초를 주워서 가져오시면 보상금을 드립니다. 최대 6만원이니 많은 참여 부탁드립니다.!
+						단, 물기X</p>
 						<ul class="actions special">
 							<li><a href="#" class="button alt">Learn More</a></li>
 						</ul>
