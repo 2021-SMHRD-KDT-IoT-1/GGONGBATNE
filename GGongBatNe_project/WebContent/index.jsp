@@ -67,14 +67,15 @@
 			<section class="box special features">
 				<div class="features-row">
 					<section>
-						<span class="icon solid major fa-bolt accent2"></span>
+						<span class="icon solid major fal fa-smoking-ban"></span>
+
 						<h3>Magna etiam</h3>
 						<p>Integer volutpat ante et accumsan commophasellus sed
 							aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis
 							accumsan dolore magna aliquam veroeros.</p>
 					</section>
 					<section>
-						<span class="icon solid major fa-chart-area accent3"></span>
+						<span class="icon solid major fas fa-analytics"></span>
 						<h3>Ipsum dolor</h3>
 						<p>Integer volutpat ante et accumsan commophasellus sed
 							aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis
@@ -83,7 +84,7 @@
 				</div>
 				<div class="features-row">
 					<section>
-						<span class="icon solid major fa-cloud accent4"></span>
+						<span class="icon solid major fas fa-water"></span>
 						<h3>Sed feugiat</h3>
 						<p>Integer volutpat ante et accumsan commophasellus sed
 							aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis
