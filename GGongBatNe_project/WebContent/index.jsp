@@ -39,9 +39,9 @@
 			<p>Korea NO.1</p>
 
 			<ul class="actions special">
-				<li><a href="#" class="button primary">HOME</a></li>
-				<li><a href="#" class="button">LOCAYION</a></li>
-				<li><a href="#" class="button">COMPLAINTS</a></li>
+				<li><a href="index.jsp" class="button primary">HOME</a></li>
+				<li><a href="Map.jsp" class="button">지도</a></li>
+				<li><a href="service.jsp" class="button">고객센터</a></li>
 
 			</ul>
 
@@ -63,7 +63,7 @@
 						Condimentum turpis massa.
 					</p>
 				</header>
-				<span class="image featured"><img src="images/pic01.jpg"
+				<span class="image featured"><img src="images/ad01.jpg"
 					alt="" /></span>
 			</section>
 
