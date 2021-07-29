@@ -6,17 +6,43 @@
 <meta charset="EUC-KR">
 <title>Insert title here</title>
 </head>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>HTML CSS Left Right Split</title>
+    <style>
+      div.row {
+        width: 100%;
+        display: flex;
+        border: 1px solid #003458;
+      }
+      div.left {
+        width: 50%;
+        float: left;
+        box-sizing: border-box;
+        background: #8977ad;
+      }
+      div.right {
+        width: 50%;
+        float: right;
+        box-sizing: border-box;
+        background: #ece6cc;
+      }
+    </style>
+
 <body>
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 <script type='text/javascript' src='//dapi.kakao.com/v2/maps/sdk.js?appkey=e99022b6f91dd955ccad95591a8ecb63'></script>
 
+
 		<section id="intro" class="wrapper style1 fullscreen fade-up">
-			<div class="inner" style="padding: 2em !important;">
+			<div class="left" style="padding: 2em !important;">
 				
 				<p>실시간 위치확인하기</p>
 				<div id="map" style="width: 800px; height: 600px; background-color: black; margin-left: 20px;"></div>
 			
 			</div>
+			</section>
  
 <script src="assets/js/jquery.min.js"></script>
 	 <script src="assets/js/jquery.scrollex.min.js"></script>
@@ -49,7 +75,11 @@ var marker = new kakao.maps.Marker({
 marker.setMap(map);
 
 // 마커에 커서가 오버됐을 때 마커 위에 표시할 인포윈도우를 생성합니다
-var iwContent = '<div style="padding:5px;">우리집</div>'; // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+var iwContent = '<div style="padding:5px;">
+
+
+
+</div>'; // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
 
 // 인포윈도우를 생성합니다
 var infowindow = new kakao.maps.InfoWindow({
@@ -69,4 +99,5 @@ kakao.maps.event.addListener(marker, 'mouseout', function() {
 });
 </script>
 </body>
+
 </html>

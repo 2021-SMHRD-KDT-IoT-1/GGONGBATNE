@@ -9,25 +9,7 @@
 <html>
 
 <style>
-div.row {
-	width: 100%;
-	display: flex;
-	border: 1px solid #003458;
-}
 
-div.left {
-	width: 50%;
-	float: left;
-	box-sizing: border-box;
-	background: #FFFFFF;
-}
-
-div.right {
-	width: 50%;
-	float: right;
-	box-sizing: border-box;
-	background: #FFFFFF;
-}
 </style>
 
 	<head>

@@ -21,7 +21,7 @@
 					<li><a href="index.jsp">Home</a></li>
 					<li><a href="#" class="icon solid fa-angle-down">Menu</a>
 						<ul>
-							<li><a href="generic.jsp">지도</a></li>
+							<li><a href="Map.jsp">지도</a></li>
 							<li><a href="service.jsp">고객센터</a></li>
 								
 						</ul></li>
@@ -37,7 +37,7 @@
 
 			<ul class="actions special">
 				<li><a href="index.jsp" class="button primary">HOME</a></li>
-				<li><a href="generic.jsp" class="button">지도</a></li>
+				<li><a href="Map.jsp" class="button">지도</a></li>
 				<li><a href="service.jsp" class="button">고객센터</a></li>
 
 			</ul>
@@ -52,13 +52,14 @@
 
 			<section class="box special">
 				<header class="major">
-					<h2>Introducing the ultimate mobile app for doing stuff with
-						your phone</h2>
+					<h2>담배 꽁초가 하수구를 타고 바다를 건너 다시 우리 입으로?!</h2>
 					<p>
-						Blandit varius ut praesent nascetur eu penatibus nisi risus
-						faucibus nunc ornare<br /> adipiscing nunc adipiscing.
-						Condimentum turpis massa.
+						[GGongBatNe] 하수구 꽁초 관련 문의 : 062-XXX-XXXX  설치문의 : 062-XXX-XXX1 
+						
 					</p>
+					
+					<p>
+					[관할구청] 동구청 : 062-XXX-XXX 북구청: 062-XXX-XXX</p>
 				</header>
 				<span class="image featured"><img src="images/ad01.jpg"
 					alt="" /></span>
@@ -67,34 +68,38 @@
 			<section class="box special features">
 				<div class="features-row">
 					<section>
-						<span class="icon solid major fa-bolt accent2"></span>
-						<h3>Magna etiam</h3>
-						<p>Integer volutpat ante et accumsan commophasellus sed
-							aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis
-							accumsan dolore magna aliquam veroeros.</p>
+						<span class="icon solid major fal fa-smoking-ban"></span>
+
+						<h3>꽁초 멈춰!!!</h3>
+						<p>세계보건기구(WHO)에서는 전 세계 담배 팜매량의 3분의 2가 담배꽁초로 땅바닥에 버려지는 것으로 추산하고있다.
+						연간 6조 개비의 담배가 생산돼 이 중 4조개의 담배꽁초가 버려지는 셈이다.</p>
+						<p>해양 보존센터(Ocean Conservancy)가 발표한 자료에 따르면, 지난 32년간 전 세계 해변에서 수거한 해양 쓰레기의 3분의
+						1이 담배꽁초였다.</p>
 					</section>
 					<section>
-						<span class="icon solid major fa-chart-area accent3"></span>
-						<h3>Ipsum dolor</h3>
-						<p>Integer volutpat ante et accumsan commophasellus sed
-							aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis
-							accumsan dolore magna aliquam veroeros.</p>
+						<span class="icon solid major fas fa-biohazard"></span>
+						<h3>유해물질</h3>
+						<p>담배 필터는 흰 솜으로 생각하기 쉽지만, 실제로는 '셀룰로스 아세테이트'로 만들어져 있고, 다느다란 플라스틱 섬유를 포함한다.
+						필터 하나에 1만 2000개의 가는 섬유가 들어있다. </p>
+						<p>셀룰로스 아세테이트의 분해 속도 = 18개월~10년이상</p>
+						<p>7000가지 화학 물질이 필터를 통해 환경에 유출되는데 그중 50가지는 발암물질이다.</p>
 					</section>
 				</div>
 				<div class="features-row">
 					<section>
-						<span class="icon solid major fa-cloud accent4"></span>
-						<h3>Sed feugiat</h3>
-						<p>Integer volutpat ante et accumsan commophasellus sed
-							aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis
-							accumsan dolore magna aliquam veroeros.</p>
+						<span class="icon solid major fas fa-water"></span>
+						<h3>꽁초와 바다와 우리</h3>
+						<p>하수구에 버려진 꽁초의 필터가 서서히 녹기 시작하는데 하수처리장에서 이 유해물질이 전부 걸러지지 않으며 도로 근처의 하수구는 바로 
+						강으로 빠지며 바다로 이어진다.</p>
+						<p>미국 환경보호청(EPA)의 실험에서 물 1L에 담배꽁초 '하나'를 96시간 담가 유해물질이 눅아 나오도록 한 다음 민물고기 또는 바다
+						물고기를 넣은 결과 반 이상이 죽는 것으로 나타났다.</p> 
 					</section>
 					<section>
-						<span class="icon solid major fa-lock accent5"></span>
-						<h3>Enim phasellus</h3>
-						<p>Integer volutpat ante et accumsan commophasellus sed
-							aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis
-							accumsan dolore magna aliquam veroeros.</p>
+						<span class="icon solid major fas fa-won-sign"></span>
+						<h3>꽁초피해액</h3>
+						<p>폐기물 부담금은 약 876억 원에 이르지만, 부담금 대부분은 꽁초 수거와 처리에 쓰이지 않고 있다.</p>
+						<p>하수구 속 꽁초로 인해 하수구가 막혀 역류하면 큰 피해를 입힐 수 있고 그 만큼의 복원비가 들어간다.</p>
+						<p>악취로 인해 주변 상가가 금전적인 피해를 받을 수 있다.</p>
 					</section>
 				</div>
 			</section>
@@ -105,10 +110,8 @@
 					<section class="box special">
 						<span class="image featured"><img src="images/pic02.jpg"
 							alt="" /></span>
-						<h3>Sed lorem adipiscing</h3>
-						<p>Integer volutpat ante et accumsan commophasellus sed
-							aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis
-							accumsan dolore magna aliquam veroeros.</p>
+						<h3>제1회 꽁초 아이디어 공모전</h3>
+						<p>친환경적이고 기술적인 아이디어라면 누구나 신청가능 총 상금 1500만원!!</p>
 						<ul class="actions special">
 							<li><a href="#" class="button alt">Learn More</a></li>
 						</ul>
@@ -120,10 +123,9 @@
 					<section class="box special">
 						<span class="image featured"><img src="images/pic03.jpg"
 							alt="" /></span>
-						<h3>Accumsan integer</h3>
-						<p>Integer volutpat ante et accumsan commophasellus sed
-							aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis
-							accumsan dolore magna aliquam veroeros.</p>
+						<h3>꽁초 줍고 용돈 벌자!!!</h3>
+						<p>꽁초를 주워서 가져오시면 보상금을 드립니다. 최대 6만원이니 많은 참여 부탁드립니다.!
+						단, 물기X</p>
 						<ul class="actions special">
 							<li><a href="#" class="button alt">Learn More</a></li>
 						</ul>

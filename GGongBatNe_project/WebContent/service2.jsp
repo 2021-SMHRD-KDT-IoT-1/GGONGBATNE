@@ -24,9 +24,21 @@
 					<li><a href="index.jsp">Home</a></li>
 					<li><a href="#" class="icon solid fa-angle-down">Menu</a>
 						<ul>
-							<li><a href="generic.jsp">지도</a></li>
+<<<<<<< HEAD
+							<li><a href="Map.jsp">Generic</a></li>
+							<li><a href="contact.html">Contact</a></li>
+							<li><a href="elements.html">Elements</a></li>
+							<li><a href="#">고객센터</a>
+								<ul>
+									<li><a href="#">자주 묻는 질문</a></li>
+									<li><a href="service.jsp">민원 게시판</a></li>
+
+								</ul></li>
+=======
+							<li><a href="Map.jsp">지도</a></li>
 							<li><a href="service.jsp">고객센터</a></li>
 								
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-IoT-1/GGONGBATNE.git
 						</ul></li>
 					<li><a href="login.jsp" class="button">Login</a></li>
 				</ul>
