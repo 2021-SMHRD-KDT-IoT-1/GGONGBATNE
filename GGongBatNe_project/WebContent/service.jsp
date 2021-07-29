@@ -7,17 +7,27 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
+
 	<head>
 		<title>Contact - Alpha by HTML5 UP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		
 	</head>
+	
 	<body class="is-preload">
+	
 		<div id="page-wrapper">
 
 		<!-- Header -->
 		<header id="header" class="alt">
+		<style>
+		#header.alt {
+		background-color: #1E90ff;
+		}	</style>
+		
+		
 
 			<nav id="nav">
 				<ul>
@@ -37,7 +47,7 @@
 
 			<!-- Main -->
 				<section id="main" class="container medium">
-					<header>
+				
 						<h2>고객센터</h2>
 						<p>불편한 점을 말해주세요. 자세를 고쳐 앉던지</p>
 					</header>
