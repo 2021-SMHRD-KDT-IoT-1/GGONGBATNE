@@ -16,7 +16,7 @@
 				
 				<p>실시간 위치확인하기</p>
 				<div id="map" style="width: 800px; height: 600px; background-color: black; margin-left: 20px;"></div>
-			
+			</section>
 			</div>
  
 <script src="assets/js/jquery.min.js"></script>
