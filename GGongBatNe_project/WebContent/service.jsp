@@ -16,27 +16,19 @@
 	<body class="is-preload">
 		<div id="page-wrapper">
 
-			<!-- Header -->
-					<!-- Header -->
+		<!-- Header -->
 		<header id="header" class="alt">
 
 			<nav id="nav">
 				<ul>
-					<li><a href="index.html">Home</a></li>
+					<li><a href="index.jsp">Home</a></li>
 					<li><a href="#" class="icon solid fa-angle-down">Menu</a>
 						<ul>
-							<li><a href="generic.html">Generic</a></li>
-							<li><a href="contact.html">Contact</a></li>
-							<li><a href="elements.html">Elements</a></li>
-							<li><a href="#">고객센터</a>
-								<ul>
-									<li><a href="#">자주 묻는 질문</a></li>
-									<li><a href="service.html">민원 게시판</a></li>
-
-								</ul></li>
+							<li><a href="generic.jsp">지도</a></li>
+							<li><a href="service.jsp">고객센터</a></li>
+								
 						</ul></li>
-					<li><a href="login.html" class="button">Login</a></li>
-					<li><a href="Map.jsp" class="button">Map</a></li>
+					<li><a href="login.jsp" class="button">Login</a></li>
 				</ul>
 			</nav>
 		</header>
@@ -63,7 +55,7 @@
 		</table>
 		<ul class="actions special">
 				<li><a href="#" class="button">수정하기</a></li>
-				<li><a href="service2.html" class="button">작성하기</a></li>
+				<li><a href="service2.jsp" class="button">작성하기</a></li>
 				<li><a href="#" class="button">뒤로가기</a></li>
 
 			</ul>

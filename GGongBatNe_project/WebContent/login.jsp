@@ -24,11 +24,11 @@
 
 		<!-- ¸Þ´º -->
 		<header id="navigation" class="alt">
-			<h1><a href="index.html">Home</a></h1>
+			<h1><a href="index.jsp">Home</a></h1>
 			<nav id="nav">
 				<ul>
 					<li class="special">
-						<a href="#menu" class="menuToggle"><span>Menu</span></a>
+						<a href="index.jsp" class="menuToggle"><span>Home</span></a>
 						<div id="menu">
 							<ul>
 								<li><a href="index.html">Home</a></li>
