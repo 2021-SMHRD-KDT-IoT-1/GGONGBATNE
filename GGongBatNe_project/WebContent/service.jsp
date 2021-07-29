@@ -16,8 +16,7 @@
 	<body class="is-preload">
 		<div id="page-wrapper">
 
-			<!-- Header -->
-					<!-- Header -->
+		<!-- Header -->
 		<header id="header" class="alt">
 
 			<nav id="nav">
@@ -25,6 +24,7 @@
 					<li><a href="index.jsp">Home</a></li>
 					<li><a href="#" class="icon solid fa-angle-down">Menu</a>
 						<ul>
+<<<<<<< HEAD
 							<li><a href="generic.jsp">Generic</a></li>
 							<li><a href="contact.jsp">Contact</a></li>
 							<li><a href="elements.jsp">Elements</a></li>
@@ -34,9 +34,13 @@
 									<li><a href="service2.jsp">민원 게시판</a></li>
 
 								</ul></li>
+=======
+							<li><a href="generic.jsp">지도</a></li>
+							<li><a href="service.jsp">고객센터</a></li>
+								
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-IoT-1/GGONGBATNE.git
 						</ul></li>
-					<li><a href="login.html" class="button">Login</a></li>
-					<li><a href="Map.jsp" class="button">Map</a></li>
+					<li><a href="login.jsp" class="button">Login</a></li>
 				</ul>
 			</nav>
 		</header>

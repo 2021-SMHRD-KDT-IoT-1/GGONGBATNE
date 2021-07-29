@@ -21,14 +21,11 @@
 					<li><a href="index.jsp">Home</a></li>
 					<li><a href="#" class="icon solid fa-angle-down">Menu</a>
 						<ul>
-							<li><a href="generic.jsp">Generic</a></li>
-							<li><a href="contact.jsp">Contact</a></li>
-							<li><a href="elements.jsp">Elements</a></li>
+							<li><a href="generic.jsp">지도</a></li>
 							<li><a href="service.jsp">고객센터</a></li>
 								
 						</ul></li>
 					<li><a href="login.jsp" class="button">Login</a></li>
-					<li><a href="Map.jsp" class="button">Map</a></li>
 				</ul>
 			</nav>
 		</header>
@@ -40,7 +37,7 @@
 
 			<ul class="actions special">
 				<li><a href="index.jsp" class="button primary">HOME</a></li>
-				<li><a href="Map.jsp" class="button">지도</a></li>
+				<li><a href="generic.jsp" class="button">지도</a></li>
 				<li><a href="service.jsp" class="button">고객센터</a></li>
 
 			</ul>
