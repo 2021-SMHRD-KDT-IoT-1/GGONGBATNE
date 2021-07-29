@@ -6,13 +6,37 @@
 <meta charset="EUC-KR">
 <title>Insert title here</title>
 </head>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>HTML CSS Left Right Split</title>
+    <style>
+      div.row {
+        width: 100%;
+        display: flex;
+        border: 1px solid #003458;
+      }
+      div.left {
+        width: 50%;
+        float: left;
+        box-sizing: border-box;
+        background: #8977ad;
+      }
+      div.right {
+        width: 50%;
+        float: right;
+        box-sizing: border-box;
+        background: #ece6cc;
+      }
+    </style>
+
 <body>
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 <script type='text/javascript' src='//dapi.kakao.com/v2/maps/sdk.js?appkey=c396fe0efc7b0e5f37418f17f1fd034d'></script>
 
 
 		<section id="intro" class="wrapper style1 fullscreen fade-up">
-			<div class="inner" style="padding: 2em !important;">
+			<div class="left" style="padding: 2em !important;">
 				
 				<p>실시간 위치확인하기</p>
 				<div id="map" style="width: 800px; height: 600px; background-color: black; margin-left: 20px;"></div>
@@ -75,4 +99,5 @@ kakao.maps.event.addListener(marker, 'mouseout', function() {
 });
 </script>
 </body>
+
 </html>
