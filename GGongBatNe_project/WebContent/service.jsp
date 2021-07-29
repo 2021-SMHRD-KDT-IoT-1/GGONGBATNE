@@ -25,7 +25,7 @@
 					<li><a href="#" class="icon solid fa-angle-down">Menu</a>
 						<ul>
 <<<<<<< HEAD
-							<li><a href="generic.jsp">Generic</a></li>
+							<li><a href="Map.jsp">Generic</a></li>
 							<li><a href="contact.jsp">Contact</a></li>
 							<li><a href="elements.jsp">Elements</a></li>
 							<li><a href="#">고객센터</a>
@@ -35,7 +35,7 @@
 
 								</ul></li>
 =======
-							<li><a href="generic.jsp">지도</a></li>
+							<li><a href="Map.jsp">지도</a></li>
 							<li><a href="service.jsp">고객센터</a></li>
 								
 >>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-IoT-1/GGONGBATNE.git

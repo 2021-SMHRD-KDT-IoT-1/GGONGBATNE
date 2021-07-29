@@ -37,16 +37,16 @@ div.right {
 		<!-- Header -->
 		<header id="header">
 			<h1>
-				<a href="index.html">Alpha</a> by HTML5 UP
+				<a href="index.jsp">Alpha</a> by HTML5 UP
 			</h1>
 			<nav id="nav">
 				<ul>
 					<li><a href="index.html">Home</a></li>
 					<li><a href="#" class="icon solid fa-angle-down">Layouts</a>
 						<ul>
-							<li><a href="generic.html">Generic</a></li>
-							<li><a href="contact.html">Contact</a></li>
-							<li><a href="elements.html">Elements</a></li>
+							<li><a href="Map.jsp">Generic</a></li>
+							<li><a href="contact.jsp">Contact</a></li>
+							<li><a href="elements.jsp">Elements</a></li>
 							<li><a href="#">Submenu</a>
 								<ul>
 									<li><a href="#">Option One</a></li>
