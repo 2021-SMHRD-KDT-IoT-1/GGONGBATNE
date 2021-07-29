@@ -10,6 +10,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 <script type='text/javascript' src='//dapi.kakao.com/v2/maps/sdk.js?appkey=c396fe0efc7b0e5f37418f17f1fd034d'></script>
 
+
 		<section id="intro" class="wrapper style1 fullscreen fade-up">
 			<div class="inner" style="padding: 2em !important;">
 				
@@ -17,6 +18,7 @@
 				<div id="map" style="width: 800px; height: 600px; background-color: black; margin-left: 20px;"></div>
 			
 			</div>
+			</section>
  
 <script src="assets/js/jquery.min.js"></script>
 	 <script src="assets/js/jquery.scrollex.min.js"></script>

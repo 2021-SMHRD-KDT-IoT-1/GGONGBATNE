@@ -22,16 +22,16 @@
 
 			<nav id="nav">
 				<ul>
-					<li><a href="index.html">Home</a></li>
+					<li><a href="index.jsp">Home</a></li>
 					<li><a href="#" class="icon solid fa-angle-down">Menu</a>
 						<ul>
-							<li><a href="generic.html">Generic</a></li>
-							<li><a href="contact.html">Contact</a></li>
-							<li><a href="elements.html">Elements</a></li>
+							<li><a href="generic.jsp">Generic</a></li>
+							<li><a href="contact.jsp">Contact</a></li>
+							<li><a href="elements.jsp">Elements</a></li>
 							<li><a href="#">고객센터</a>
 								<ul>
 									<li><a href="#">자주 묻는 질문</a></li>
-									<li><a href="service.html">민원 게시판</a></li>
+									<li><a href="service2.jsp">민원 게시판</a></li>
 
 								</ul></li>
 						</ul></li>
@@ -63,7 +63,7 @@
 		</table>
 		<ul class="actions special">
 				<li><a href="#" class="button">수정하기</a></li>
-				<li><a href="service2.html" class="button">작성하기</a></li>
+				<li><a href="service2.jsp" class="button">작성하기</a></li>
 				<li><a href="#" class="button">뒤로가기</a></li>
 
 			</ul>
