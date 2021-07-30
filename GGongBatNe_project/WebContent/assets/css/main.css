@@ -3164,14 +3164,25 @@
 			}
 
 /* Banner */
-
+	
+	#banner>video{
+	position: absolute;
+     top: 0px;
+     left: 0px;
+     min-width: 100%;
+     min-height: 100%;
+     width: auto;
+     height: auto;
+     z-index: -1000;
+     overflow: hidden;
+	}
 	#banner {
-		background-attachment: scroll,							fixed;
+		/*background-attachment: scroll,							fixed;
 		background-color: #666;
 		background-image: url("images/overlay.png"), url("../../images/banner.gif");
 		background-position: top left,						center center;
 		background-repeat: repeat,							no-repeat;
-		background-size: auto,							cover;
+		background-size: auto,							cover;*/
 		color: #fff;
 		padding: 12em 0 20em 0;
 		text-align: center;

@@ -28,9 +28,13 @@
 				<ul>
 					<li class="special">
 						<a href="#menu" class="menuToggle"><span>회원가입</span></a>
+						<style>#menu{
+						background-color: #1E90ff; }
+						</style>
 						<form action="">
 						<div id="menu">
 							<ul>
+							<h2>회원가입</h2>
 								<li><input type="text" name="Id" id="Id" placeholder="사원번호를 입력하세요" /></li>
 								<li><input type="password" name="pw" id="pw" placeholder="비밀번호를 입력하세요" /></li>
 								<li><input type="text" name="name" id="name" placeholder="사원명를 입력하세요" /></li>
@@ -50,7 +54,8 @@
 			<form id="signup-form" method="post" action="#">
 				<input type="text" name="Id" id="Id" placeholder="사원번호를 입력하세요" />
 				<input type="password" name="pw" id="pw" placeholder="비밀번호를 입력하세요" />
-				<input type="submit" id = "sublogin" value="로그인" />				
+				<input type="submit" id = "sublogin" value="로그인" />
+								
 		
 			</form>
 		</div>
