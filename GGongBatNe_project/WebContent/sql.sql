@@ -1,5 +1,6 @@
+----------   사원 테이블  -------------
 CREATE TABLE MEMBERS (
-   MEM_NUM   varchar2(30)      NOT NULL,
+   MEM_ID   varchar2(30)      NOT NULL,
    MEM_PW   varchar2(30)  NOT NULL,
    MEM_NAME   varchar2(30)   NOT   NULL,
    MEM_PHONE   varchar2(30)   NOT   NULL,
@@ -7,7 +8,22 @@ CREATE TABLE MEMBERS (
 );
 select * from MEMBERS;
 
+----------   기기 명 테이블   -------------
+CREATE TABLE GIGI_NAMES (
+   GIGI_NAME_NUM   NUMBER(20)      NOT NULL,
+   GIGI_NAME   varchar2(30)      NOT NULL,
+   GIGI_LOCATION_A   varchar2(30)   ,
+   GIGI_LOCATION_B   varchar2(30)   ,
+   GIGI_AREA   varchar2(20)   not   NULL,
+   GIGI_COUNT   number(20)   not   NULL,
+   GIGI_CHECK   DATE   not   NULL
+);
+select * from GIGI_NAMES;
 
+insert into GIGI_NAMES values(301-1 ,103,103,0,sysdate );
+delete from COMPLAINTS where com_title='a1';
+
+----------   센서 데이터 수집 테이블   -------------
 CREATE TABLE GIGI_SENSORS (
    GIGI_NUM   NUMBER(20)      NOT NULL,
    GIGI_NAME   varchar2(30)      NOT NULL,
@@ -19,7 +35,7 @@ CREATE TABLE GIGI_SENSORS (
 );
 select * from GIGI_SENSORS;
 
-
+----------   게시판 테이블   -------------
 CREATE TABLE COMPLAINTS (
    COM_NUM   NUMBER(20)      NOT NULL,
    GIGI_NAME   varchar2(30)      ,
@@ -31,16 +47,8 @@ CREATE TABLE COMPLAINTS (
 select * from COMPLAINTS;
 
 
-CREATE TABLE GIGI_NAMES (
-   GIGI_NAME_NUM   NUMBER(20)      NOT NULL,
-   GIGI_NAME   varchar2(30)      NOT NULL,
-   GIGI_LOCATION   varchar2(30)   not   NULL,
-   GIGI_AREA   varchar2(20)   not   NULL,
-   GIGI_COUNT   number(20)   not   NULL,
-   GIGI_CHECK   DATE   not   NULL
-);
-select * from GIGI_NAMES;
 
+----------  제약조건   -------------
 
 ALTER TABLE MEMBERS ADD CONSTRAINT PK_MEMBERS PRIMARY KEY (
    MEM_NUM
@@ -75,7 +83,7 @@ REFERENCES GIGI_NAMES (
 );
 
 
-----------   민원 게시판 목록 시퀀스   ------------------
+----------   민원 게시판 목록 시퀀스   -------------
 create sequence sq_com_num
 increment by 1 
 start with 1 
@@ -89,7 +97,7 @@ start with 1
 minvalue 1 
 nocycle;
 
-----------   기기 네임 정보 시퀀스   ------------------
+----------   기기 네임 정보 시퀀스   ---------------
 create sequence sq_giginame_num
 increment by 1 
 start with 1 
@@ -109,3 +117,8 @@ drop table MEMBERS
 drop table GIGI_SENSORS
 drop table COMPLAINTS
 drop table GIGI_NAMES
+
+----------   시퀀스 지우기   ---------------
+drop sequence sq_com_num;
+drop sequence sq_gigisen_num;
+drop sequence sq_giginame_num;
