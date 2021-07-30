@@ -17,13 +17,6 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 	</head>
 	<body class="is-preload">
-			<%
-		//Complaints_DTO dto = (Complaints_DTO)session.getAttribute("dto");
-	
-		Complaints_DAO dao = new Complaints_DAO();
-		ArrayList<Complaints_DTO> list_message = new ArrayList<Complaints_DTO>();
-		
-	%>
 	
 		<div id="page-wrapper">
 

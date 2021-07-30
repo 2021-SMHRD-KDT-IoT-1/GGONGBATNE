@@ -87,7 +87,8 @@
 						<td> <%= list.get(i).getCom_date() %></td>		
 					</tr>
 				<%} %>
-					
+
+		
 			</thead>
 		</table>
 		<ul class="actions special">
