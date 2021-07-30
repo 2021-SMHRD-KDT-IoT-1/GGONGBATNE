@@ -58,17 +58,18 @@
 									<input type="text" name="title" value="" placeholder="제목을 입력해주세요." />
 								</div>
 								<div class="col-6 col-12-mobilep">
-									<input type="email" name="email"  value="" placeholder="기기번호" />
+									<input type="text" name="gigi_name"  value="" placeholder="기기번호" />
 								</div>
 								<div class="col-6 col-12-mobilep">
-									<input type="text" name="subject" value="" placeholder="연락받을 전화번호 및 이메일" />
+									<input type="text" name="phone" value="" placeholder="연락받을 전화번호" />
 								</div>
 								<div class="col-12">
-									<textarea name="content"  placeholder="내용을 입력해주세요." rows="15"></textarea>
+									<textarea name="contents"  placeholder="내용을 입력해주세요." rows="15"></textarea>
 								</div>
 								<div class="col-12">
 									<ul class="actions special">
 										<li><input type="submit" value="제출" /></li>
+										<li><a href="service.jsp" class="button">뒤로가기</a></li>
 									</ul>
 								</div>
 							</div>

@@ -45,42 +45,20 @@ public class Complaints_DAO {
 		}
 	}
 	
-	public int upload(Complaints_DTO dto) {
-		
-		conn();
-		
-		String sql = "insert into web_board values(mem_num.nextval, ? , ? , sysdate)";
-		
-		try {
-			psmt = conn.prepareStatement(sql);
-			
-			psmt.setString(1, dto.getCom_title());
-//			psmt.setString(2, dto.getCom_email());
-			psmt.setString(2, dto.getCom_content());
-
-			
-			cnt = psmt.executeUpdate();
-			
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			close();
-		}
-		return cnt;
-	}
 	
 	public int insert(Complaints_DTO dto) {
 
 		conn();
 
 		try {
-			String sql = "insert into complaints values(sq_com_num.nextval, ? , ?, ?, sysdate)";
+			String sql = "insert into complaints values(sq_com_num.nextval, ?, ?, ?, ?, sysdate)";
 			
 			psmt = conn.prepareStatement(sql);
 			
 			psmt.setString(1, dto.getGigi_name());
 			psmt.setString(2, dto.getCom_title());
 			psmt.setString(3, dto.getCom_content());
+			psmt.setString(4, dto.getCom_phone());
 
 			cnt = psmt.executeUpdate();
 
@@ -106,13 +84,13 @@ public class Complaints_DAO {
 			rs = psmt.executeQuery();
 			
 			while(rs.next()) {
-				int com_num = rs.getInt("com_num");
 				String gigi_name = rs.getString("gigi_name");
 				String com_title = rs.getString("com_title");
-				String com_content = rs.getString("com_content");
+				String com_content = rs.getString("com_contents");
+				String com_phone = rs.getString("COM_CONTACT");
 				String com_date = rs.getString("com_date");
 				
-				Complaints_DTO dto = new Complaints_DTO(com_num, gigi_name, com_title, com_content, com_date);
+				Complaints_DTO dto = new Complaints_DTO(com_title, gigi_name, com_phone, com_content, com_date);
 				
 				list.add(dto);
 				
