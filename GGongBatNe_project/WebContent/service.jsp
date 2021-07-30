@@ -38,6 +38,7 @@
 					<header>
 						<h2>고객센터</h2>
 						<p>불편한 점을 말해주세요. 자세를 고쳐 앉던지</p>
+				
 					</header>
 					<div style="border: 1px solid; width: 100%; height: 20%;"></div>
 
@@ -54,9 +55,9 @@
 			</thead>
 		</table>
 		<ul class="actions special">
-				<li><a href="#" class="button">수정하기</a></li>
+				<li><a href="servicefix.jsp" class="button">수정하기</a></li>
 				<li><a href="service2.jsp" class="button">작성하기</a></li>
-				<li><a href="#" class="button">뒤로가기</a></li>
+				<li><a href="index.jsp" class="button">뒤로가기</a></li>
 
 			</ul>
 				</section>
