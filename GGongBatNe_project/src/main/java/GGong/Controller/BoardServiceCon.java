@@ -43,6 +43,7 @@ public class BoardServiceCon extends HttpServlet {
 			
 		}else {
 			System.out.println(" 글작성 실패");
+			response.sendRedirect("service2.jsp");
 		}
 		
 		
