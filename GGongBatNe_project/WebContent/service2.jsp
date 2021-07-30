@@ -18,15 +18,22 @@
 
 		<!-- Header -->
 		<header id="header" class="alt">
+		<style>
+		#header.alt {
+		background-color: #1E90ff;
+		}	</style>
+		
 
 			<nav id="nav">
 				<ul>
 					<li><a href="index.jsp">Home</a></li>
 					<li><a href="#" class="icon solid fa-angle-down">Menu</a>
 						<ul>
+
 							<li><a href="generic.jsp">지도</a></li>
 							<li><a href="service.jsp">고객센터</a></li>
 								
+
 						</ul></li>
 					<li><a href="login.jsp" class="button">Login</a></li>
 				</ul>

@@ -17,9 +17,8 @@
 
 		<!-- Header -->
 		<header id="header">
-			<h1>로그인</h1>
-			<p>무지성 로그인 쌉가능<br />
-			살려주세요제발 </p>
+			<h1><a href="index.jsp">Home</a></h1>
+			<p>로그인  </p>
 		</header>
 
 		<!-- 메뉴 -->
@@ -28,16 +27,23 @@
 			<nav id="nav">
 				<ul>
 					<li class="special">
-						<a href="index.jsp" class="menuToggle"><span>Home</span></a>
+						<a href="#menu" class="menuToggle"><span>회원가입</span></a>
+						<style>#menu{
+						background-color: #1E90ff; }
+						</style>
+						<form action="">
 						<div id="menu">
 							<ul>
-								<li><a href="index.html">Home</a></li>
-								<li><a href="generic.html">Generic</a></li>
-								<li><a href="elements.html">Elements</a></li>
-								<li><a href="#">Sign Up</a></li>
-								<li><a href="#">Log In</a></li>
+							<h2>회원가입</h2>
+								<li><input type="text" name="Id" id="Id" placeholder="사원번호를 입력하세요" /></li>
+								<li><input type="password" name="pw" id="pw" placeholder="비밀번호를 입력하세요" /></li>
+								<li><input type="text" name="name" id="name" placeholder="사원명를 입력하세요" /></li>
+								<li><input type="text" name="phone" id="phone" placeholder="핸드폰번호를 입력하세요" /></li>
+								<li><input type="text" name="area" id="area" placeholder="담당지역을 입력하세요" /></li>
+								<li><input type = "submit" id = "subJoin" value = "회원가입" style="background-color: orange " /></li>
 							</ul>
 						</div>
+						</form>
 					</li>
 				</ul>
 			</nav>
@@ -48,8 +54,9 @@
 			<form id="signup-form" method="post" action="#">
 				<input type="text" name="Id" id="Id" placeholder="사원번호를 입력하세요" />
 				<input type="password" name="pw" id="pw" placeholder="비밀번호를 입력하세요" />
-				<input type="submit" id = "sublogin" value="로그인" />				
-		<input type = "button" id = "subJoin" value = "회원가입" style="background-color: orange " />
+				<input type="submit" id = "sublogin" value="로그인" />
+								
+		
 			</form>
 		</div>
 
