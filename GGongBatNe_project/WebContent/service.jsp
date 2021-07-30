@@ -1,3 +1,6 @@
+<%@page import="GGong.Model.Complaints_DTO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="GGong.Model.Complaints_DAO"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <!DOCTYPE HTML>
@@ -17,6 +20,19 @@
 	</head>
 	
 	<body class="is-preload">
+
+				<%
+		//Complaints_DTO dto = (Complaints_DTO)session.getAttribute("dto");
+	
+		Complaints_DAO dao = new Complaints_DAO();
+		ArrayList<Complaints_DTO> list = new ArrayList<Complaints_DTO>();
+		
+		list= dao.showBoard();
+				
+				
+				
+		
+		%>
 	
 		<div id="page-wrapper">
 
@@ -63,6 +79,15 @@
 					<th scope="col">내용</th>
 					<th scope="col">작성날짜</th>
 				</tr>
+				<% for (int i=0; i<list.size(); i++){ %>
+					<tr>
+						<td> <%= i+1 %></td>
+						<td> <%= list.get(i).getCom_title() %></td>
+						<td> <%= list.get(i).getCom_content() %></td>
+						<td> <%= list.get(i).getCom_date() %></td>		
+					</tr>
+				<%} %>
+					
 			</thead>
 		</table>
 		<ul class="actions special">

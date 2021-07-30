@@ -7,8 +7,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-
-
 public class Complaints_DAO {
 	
 	Connection conn = null;
@@ -95,6 +93,39 @@ public class Complaints_DAO {
 		
 		return cnt;
 
+	}
+	
+	public ArrayList<Complaints_DTO> showBoard() {
+		
+		ArrayList<Complaints_DTO> list = new ArrayList<Complaints_DTO>();
+		conn();
+		String sql = "select * from complaints order by com_date desc";
+		
+		try {
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery();
+			
+			while(rs.next()) {
+				int com_num = rs.getInt("com_num");
+				String gigi_name = rs.getString("gigi_name");
+				String com_title = rs.getString("com_title");
+				String com_content = rs.getString("com_content");
+				String com_date = rs.getString("com_date");
+				
+				Complaints_DTO dto = new Complaints_DTO(com_num, gigi_name, com_title, com_content, com_date);
+				
+				list.add(dto);
+				
+			}
+		} catch (SQLException e) {
+
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+		return list;
+
+		
 	}
 	
 }
