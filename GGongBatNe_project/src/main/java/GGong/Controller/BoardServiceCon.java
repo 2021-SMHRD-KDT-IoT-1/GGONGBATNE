@@ -17,15 +17,23 @@ public class BoardServiceCon extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-	
+		
+		request.setCharacterEncoding("EUC-KR");
+		
 		String title = request.getParameter("title");
 		String content = request.getParameter("content");
+		String email = request.getParameter("email");
+		String subject = request.getParameter("subject");
+		
 		
 		System.out.println(title);
 		System.out.println(content);
+		System.out.println(email);
+		System.out.println(subject);
 		
 		Complaints_DTO dto = new Complaints_DTO(title, content);
 		Complaints_DAO dao = new Complaints_DAO();
+		
 		int cnt = dao.insert(dto);
 		
 		if(cnt>0) {

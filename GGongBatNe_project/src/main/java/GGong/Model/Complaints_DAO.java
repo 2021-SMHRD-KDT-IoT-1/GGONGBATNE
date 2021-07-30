@@ -51,7 +51,7 @@ public class Complaints_DAO {
 		
 		conn();
 		
-		String sql = "insert into web_board values(MEM_NUM.nextval, ? , ? , sysdate)";
+		String sql = "insert into web_board values(mem_num.nextval, ? , ? , sysdate)";
 		
 		try {
 			psmt = conn.prepareStatement(sql);
@@ -75,18 +75,21 @@ public class Complaints_DAO {
 
 		conn();
 
-		String sql = "insert into contact values(message_num.nextval, ?, ?)";
-
 		try {
+			String sql = "insert into complaints values(sq_com_num.nextval, ? , ?, ?, sysdate)";
+			
 			psmt = conn.prepareStatement(sql);
-
-			psmt.setString(1, dto.getCom_title());
-			psmt.setString(2, dto.getCom_content());
+			
+			psmt.setString(1, dto.getGigi_name());
+			psmt.setString(2, dto.getCom_title());
+			psmt.setString(3, dto.getCom_content());
 
 			cnt = psmt.executeUpdate();
 
 		} catch (SQLException e) {
 			e.printStackTrace();
+		}finally {
+			close();
 		}
 		
 		
