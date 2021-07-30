@@ -32,6 +32,10 @@
 
 		<!-- Banner -->
 		<section id="banner">
+		<video muted autoplay loop >
+		    <source src="vidios/vidio.mp4" type="video/mp4">
+		</video>
+		
 			<h2>GGongBatNe</h2>
 			<p>Korea NO.1</p>
 
