@@ -10,7 +10,7 @@ select * from MEMBERS;
 
 ----------   기기 명 테이블   -------------
 CREATE TABLE GIGI_NAMES (
-   GIGI_NAME_NUM   NUMBER(20)      NOT NULL,
+   GIGI_NUM   NUMBER(20)      NOT NULL,
    GIGI_NAME   varchar2(30)      NOT NULL,
    GIGI_LOCATION_A   varchar2(30)   ,
    GIGI_LOCATION_B   varchar2(30)   ,
@@ -20,8 +20,6 @@ CREATE TABLE GIGI_NAMES (
 );
 select * from GIGI_NAMES;
 
-insert into GIGI_NAMES values(301-1 ,103,103,0,sysdate );
-delete from COMPLAINTS where com_title='a1';
 
 ----------   센서 데이터 수집 테이블   -------------
 CREATE TABLE GIGI_SENSORS (
@@ -75,12 +73,6 @@ REFERENCES GIGI_NAMES (
 );
 
 
-ALTER TABLE COMPLAINTS ADD CONSTRAINT COMPLAINTS_1 FOREIGN KEY (
-   GIGI_NAME
-)
-REFERENCES GIGI_NAMES (
-   GIGI_NAME
-);
 
 
 ----------   민원 게시판 목록 시퀀스   -------------

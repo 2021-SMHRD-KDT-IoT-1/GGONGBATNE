@@ -69,6 +69,7 @@
 								<div class="col-12">
 									<ul class="actions special">
 										<li><input type="submit" value="제출" /></li>
+										<li><a href="service.jsp" class="button">뒤로가기</a></li>
 									</ul>
 								</div>
 							</div>
