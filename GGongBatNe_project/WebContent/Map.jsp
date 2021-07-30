@@ -74,7 +74,7 @@ div.right {
 					<p>실시간 위치확인하기</p>
 					<div class="left" style="padding: 2em !important;">
 						<div id="map"
-							style="width: 800px; height: 550px; background-color: black; margin-left: 20px;"></div>
+							style="width: 500px; height: 550px; background-color: black; margin-left: 20px;"></div>
 					</div>
 					<div class="right" id="device_div"
 						style="width: 50%; height: 30em; overflow: auto">

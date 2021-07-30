@@ -54,14 +54,18 @@
 						
 							<!-- 작업 부분 -->
 						
-				
+						
+				<section class="box special features">
+				<div class="features-row">
+					<section style = "widty:800px;">
 						<div id="map"
-							style="width: 700px; height: 550px; background-color: black; "></div>
+							style="width: 100%; height: 550px; background-color: black; "></div>
 					
-						
-						
+					</section>
+					<section>
+
 						<div id="device_div"
-							style="width: 500px; height: 1000px; overflow: auto">
+							style="overflow: auto">
 							<table id="kkk">
 								<thead>
 									<!-- 첫번째 행 -->
@@ -78,6 +82,32 @@
 
 							</table>
 						</div>
+					</section>
+				</div>
+				</section>
+						
+						
+				<section>
+				<div><table id="kkkkkk">
+								<thead>
+									<!-- 첫번째 행 -->
+									<tr>
+										<td>통계</td>
+										<td>통계</td>
+										
+										<td><input type='checkbox' id="del_check_all"
+											style='margin-right: 0 !important; appearance: auto !important; opacity: 100 !important;' />삭제</td>
+									</tr>
+								</thead>
+
+							</table>
+				</div>
+				
+				</section>		
+					
+						
+						
+						
 						
 						
 						
