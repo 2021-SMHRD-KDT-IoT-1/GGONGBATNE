@@ -39,6 +39,8 @@
 				</ul>
 			</nav>
 		</header>
+		
+		
 			<!-- Main -->
 				<section id="main" class="container medium">
 					<header>
@@ -46,10 +48,10 @@
 						<p>비판해주셔서 감사합니다.</p>
 					</header>
 					<div class="box">
-						<form method="post" action="#">
+						<form method="post" action="BoardServiceCon">
 							<div class="row gtr-50 gtr-uniform">
 								<div class="col-12">
-									<input type="text" name="name" id="name" value="" placeholder="제목을 입력해주세요." />
+									<input type="text" name="title" value="" placeholder="제목을 입력해주세요." />
 								</div>
 								<div class="col-6 col-12-mobilep">
 									<input type="email" name="email" id="email" value="" placeholder="기기번호" />
@@ -58,11 +60,11 @@
 									<input type="text" name="subject" id="subject" value="" placeholder="연락받을 전화번호 및 이메일" />
 								</div>
 								<div class="col-12">
-									<textarea name="message" id="message" placeholder="내용을 입력해주세요." rows="6"></textarea>
+									<textarea name="content"  placeholder="내용을 입력해주세요." rows="15"></textarea>
 								</div>
 								<div class="col-12">
 									<ul class="actions special">
-										<li><input type="submit" value="Send Message" /></li>
+										<li><input type="submit" value="제출" /></li>
 									</ul>
 								</div>
 							</div>

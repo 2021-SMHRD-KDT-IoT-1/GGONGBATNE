@@ -16,6 +16,16 @@ public class Complaints_DTO {
 		this.com_content = com_content;
 		this.com_date = com_date;
 	}
+	
+	
+	
+	public Complaints_DTO(String com_title, String com_content) {
+		
+		super();
+		this.com_title = com_title;
+		this.com_content = com_content;
+	}
+
 
 	public int getCom_num() {
 		return com_num;

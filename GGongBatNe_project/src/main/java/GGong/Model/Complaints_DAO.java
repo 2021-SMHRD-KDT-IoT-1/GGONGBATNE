@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 
+
 public class Complaints_DAO {
 	
 	Connection conn = null;
@@ -70,6 +71,27 @@ public class Complaints_DAO {
 		return cnt;
 	}
 	
+	public int insert(Complaints_DTO dto) {
 
+		conn();
+
+		String sql = "insert into contact values(message_num.nextval, ?, ?)";
+
+		try {
+			psmt = conn.prepareStatement(sql);
+
+			psmt.setString(1, dto.getCom_title());
+			psmt.setString(2, dto.getCom_content());
+
+			cnt = psmt.executeUpdate();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		
+		return cnt;
+
+	}
 	
 }
