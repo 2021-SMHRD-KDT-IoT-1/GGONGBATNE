@@ -27,6 +27,11 @@
 
 		<!-- Header -->
 		<header id="header" class="alt">
+		<style>
+		#header.alt {
+		background-color: #1E90ff;
+		}	</style>
+		
 
 			<nav id="nav">
 				<ul>
