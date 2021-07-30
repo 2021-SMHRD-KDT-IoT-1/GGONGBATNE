@@ -1,6 +1,6 @@
 @import url("fontawesome-all.min.css");
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,300italic,400italic");
-
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
 /*
 	Alpha by HTML5 UP
 	html5up.net | @ajlkn
@@ -157,12 +157,15 @@
 		}
 
 	h2 {
+	
+		font-family: "Black Han Sans", sans-serif;
 		font-size: 2.25em;
 		line-height: 1.5em;
 		letter-spacing: -0.035em;
 	}
 
 	h3 {
+	    font-family: "Black Han Sans", sans-serif;
 		font-size: 1.75em;
 		line-height: 1.5em;
 		letter-spacing: -0.025em;
@@ -3677,6 +3680,7 @@
 
 			h3 {
 				font-size: 1.5em;
+				font-family: "Black Han Sans", sans-serif;
 			}
 
 			h4 {
