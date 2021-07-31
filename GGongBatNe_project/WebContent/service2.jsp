@@ -58,10 +58,10 @@
 									<input type="text" name="title" value="" placeholder="제목을 입력해주세요." />
 								</div>
 								<div class="col-6 col-12-mobilep">
-									<input type="email" name="email"  value="" placeholder="기기번호" />
+									<input type="text" name="gigi_num"  value="" placeholder="기기번호" />
 								</div>
 								<div class="col-6 col-12-mobilep">
-									<input type="text" name="subject" value="" placeholder="연락받을 전화번호 및 이메일" />
+									<input type="text" name="phone" value="" placeholder="연락받을 전화번호 및 이메일" />
 								</div>
 								<div class="col-12">
 									<textarea name="content"  placeholder="내용을 입력해주세요." rows="15"></textarea>
