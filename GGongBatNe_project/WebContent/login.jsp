@@ -57,10 +57,10 @@
 						<style>#menu{
 						background-color: #1E90ff; }
 						</style>
-						<form action="">
+ 						<form action="">
 						<div id="menu">
 							<ul>
-							<!--  맵 API 손대는중임  -->
+							 맵 API 손대는중임 
 							<strong>회원가입</strong>
 								<li><input type="text" name="Id" id="Id" placeholder="사원번호를 입력하세요" /></li>
 								<li><input type="password" name="pw" id="pw" placeholder="비밀번호를 입력하세요" /></li>
@@ -79,15 +79,14 @@
 		</header>
 
 		<!-- 로그인 모듈 -->
-		<div>
-			<form id="signup-form" method="post" action="#">
-				<input type="text" name="Id" id="Id" placeholder="사원번호를 입력하세요" />
-				<input type="password" name="pw" id="pw" placeholder="비밀번호를 입력하세요" />
-				<input type="submit" id = "sublogin" value="로그인" />
-								
 		
+			<form action="LoginServiceCon" id="signup-form" method="post">
+				<input type="text" name="mem_id"  placeholder="사원번호를 입력하세요" >
+				<input type="password" name="mem_pw"  placeholder="비밀번호를 입력하세요" >
+				<input type="submit" id = "sublogin" value="로그인" >
+				
 			</form>
-		</div>
+		
 
 		<!-- Scripts -->
 		<!-- 로그인 자바스크립트에서 로그인되면 로그인 되었습니다 추가햇는데 데이터 받아서 연동 시켜야될듯 -->
@@ -101,7 +100,7 @@
 		<script src="assets/js/util.js"></script>
 
 		<script src="assets/js/login.js"></script>
-		<script src="assets/js/menu.js"></script>
+		<script src="assets/js/menu.js"></script> 
 		
 		<!--  한글깨짐 방지 js-->
 		<script src="assets/js/loginmap.js" type="text/javascript"></script>

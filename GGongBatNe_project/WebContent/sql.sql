@@ -114,3 +114,6 @@ drop table GIGI_NAMES
 drop sequence sq_com_num;
 drop sequence sq_gigisen_num;
 drop sequence sq_giginame_num;
+
+insert into MEMBERS values('smhrd','1234','hongman','4485','306')
+
