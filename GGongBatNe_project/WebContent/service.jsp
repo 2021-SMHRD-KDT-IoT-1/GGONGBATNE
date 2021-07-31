@@ -21,8 +21,7 @@
 	
 	<body class="is-preload">
 
-				<%
-		//Complaints_DTO dto = (Complaints_DTO)session.getAttribute("dto");
+		<%  
 	
 		Complaints_DAO dao = new Complaints_DAO();
 		ArrayList<Complaints_DTO> list = new ArrayList<Complaints_DTO>();
@@ -77,6 +76,7 @@
 					<th scope="col">번호</th>
 					<th scope="col">제목</th>
 					<th scope="col">내용</th>
+					<th scope="col">기기번호</th>
 					<th scope="col">작성날짜</th>
 				</tr>
 				<% for (int i=0; i<list.size(); i++){ %>
@@ -84,6 +84,7 @@
 						<td> <%= i+1 %></td>
 						<td> <%= list.get(i).getCom_title() %></td>
 						<td> <%= list.get(i).getCom_content() %></td>
+						<td> <%= list.get(i).getGigi_name() %></td>
 						<td> <%= list.get(i).getCom_date() %></td>		
 					</tr>
 				<%} %>
@@ -92,7 +93,7 @@
 			</thead>
 		</table>
 		<ul class="actions special">
-				<li><a href="servicefix.jsp" class="button">수정하기</a></li>
+				
 				<li><a href="service2.jsp" class="button">작성하기</a></li>
 				<li><a href="index.jsp" class="button">뒤로가기</a></li>
 

@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 <!DOCTYPE HTML>
 <!--
 	Eventually by HTML5 UP
@@ -13,34 +13,63 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/login.css" />
 	</head>
+	
+	<!--  map css -->
+	<style>
+	.area {
+    position: absolute;
+    background: #fff;
+    border: 1px solid #888;
+    border-radius: 3px;
+    font-size: 12px;
+    top: -5px;
+    left: 15px;
+    padding:2px;
+    
+}
+
+.info {
+    font-size: 12px;
+    padding: 5px;
+    color : black;
+}
+.info .title {
+    font-weight: bold;
+}</style>
+
+
+
 	<body class="is-preload">
 
 		<!-- Header -->
 		<header id="header">
 			<h1><a href="index.jsp">Home</a></h1>
-			<p>·Î±×ÀÎ  </p>
+			<p>ë¡œê·¸ì¸  </p>
 		</header>
 
-		<!-- ¸Ş´º -->
+		<!-- ë©”ë‰´ -->
 		<header id="navigation" class="alt">
 			<h1><a href="index.jsp">Home</a></h1>
 			<nav id="nav">
 				<ul>
 					<li class="special">
-						<a href="#menu" class="menuToggle"><span>È¸¿ø°¡ÀÔ</span></a>
+						<a href="#menu" class="menuToggle"><span>íšŒì›ê°€ì…</span></a>
 						<style>#menu{
 						background-color: #1E90ff; }
 						</style>
 						<form action="">
 						<div id="menu">
 							<ul>
-							<h2>È¸¿ø°¡ÀÔ</h2>
-								<li><input type="text" name="Id" id="Id" placeholder="»ç¿ø¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä" /></li>
-								<li><input type="password" name="pw" id="pw" placeholder="ºñ¹Ğ¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä" /></li>
-								<li><input type="text" name="name" id="name" placeholder="»ç¿ø¸í¸¦ ÀÔ·ÂÇÏ¼¼¿ä" /></li>
-								<li><input type="text" name="phone" id="phone" placeholder="ÇÚµåÆù¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä" /></li>
-								<li><input type="text" name="area" id="area" placeholder="´ã´çÁö¿ªÀ» ÀÔ·ÂÇÏ¼¼¿ä" /></li>
-								<li><input type = "submit" id = "subJoin" value = "È¸¿ø°¡ÀÔ" style="background-color: orange " /></li>
+							<!--  ë§µ API ì†ëŒ€ëŠ”ì¤‘ì„  -->
+							<strong>íšŒì›ê°€ì…</strong>
+								<li><input type="text" name="Id" id="Id" placeholder="ì‚¬ì›ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš”" /></li>
+								<li><input type="password" name="pw" id="pw" placeholder="ë¹„ë°€ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš”" /></li>
+								<li><input type="text" name="name" id="name" placeholder="ì‚¬ì›ëª…ë¥¼ ì…ë ¥í•˜ì„¸ìš”" /></li>
+								<li><input type="text" name="phone" id="phone" placeholder="í•¸ë“œí°ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš”" /></li>
+								<br>
+								<h6>ë‹´ë‹¹ì§€ì—­ì„ íƒ</h6>
+								<li id = "map" style="width:100%;height:350px;" ></li>
+								<li><input type = "submit" id = "subJoin" value = "íšŒì›ê°€ì…" style="background-color: orange " /></li>
 							</ul>
 						</div>
 						</form>
@@ -49,19 +78,21 @@
 			</nav>
 		</header>
 
-		<!-- ·Î±×ÀÎ ¸ğµâ -->
+		<!-- ë¡œê·¸ì¸ ëª¨ë“ˆ -->
 		<div>
 			<form id="signup-form" method="post" action="#">
-				<input type="text" name="Id" id="Id" placeholder="»ç¿ø¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä" />
-				<input type="password" name="pw" id="pw" placeholder="ºñ¹Ğ¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä" />
-				<input type="submit" id = "sublogin" value="·Î±×ÀÎ" />
+				<input type="text" name="Id" id="Id" placeholder="ì‚¬ì›ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš”" />
+				<input type="password" name="pw" id="pw" placeholder="ë¹„ë°€ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš”" />
+				<input type="submit" id = "sublogin" value="ë¡œê·¸ì¸" />
 								
 		
 			</form>
 		</div>
 
 		<!-- Scripts -->
-		<!-- ·Î±×ÀÎ ÀÚ¹Ù½ºÅ©¸³Æ®¿¡¼­ ·Î±×ÀÎµÇ¸é ·Î±×ÀÎ µÇ¾ú½À´Ï´Ù Ãß°¡ÇŞ´Âµ¥ µ¥ÀÌÅÍ ¹Ş¾Æ¼­ ¿¬µ¿ ½ÃÄÑ¾ßµÉµí -->
+		<!-- ë¡œê·¸ì¸ ìë°”ìŠ¤í¬ë¦½íŠ¸ì—ì„œ ë¡œê·¸ì¸ë˜ë©´ ë¡œê·¸ì¸ ë˜ì—ˆìŠµë‹ˆë‹¤ ì¶”ê°€í–‡ëŠ”ë° ë°ì´í„° ë°›ì•„ì„œ ì—°ë™ ì‹œì¼œì•¼ë ë“¯ -->
+		<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=7afc685329a94abf98fb3fc9b7499f90"></script>
+		<script src="assets/js/loginmap.js"></script>
 		<script src="assets/js/jquery.min.js"></script>
 		<script src="assets/js/jquery.scrollex.min.js"></script>
 		<script src="assets/js/jquery.scrolly.min.js"></script>
@@ -71,6 +102,13 @@
 
 		<script src="assets/js/login.js"></script>
 		<script src="assets/js/menu.js"></script>
+		
+		<!--  í•œê¸€ê¹¨ì§ ë°©ì§€ js-->
+		<script src="assets/js/loginmap.js" type="text/javascript"></script>
+
+		
+
+
 
 	</body>
 </html>
