@@ -21,6 +21,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		
 	</head>
 	
 	<body class="is-preload">
@@ -36,9 +37,14 @@
 	
 	%>
 	
-	<script type='text/javascript'
-				src='//dapi.kakao.com/v2/maps/sdk.js?appkey=c396fe0efc7b0e5f37418f17f1fd034d'></script>
+	<!--  카카오 맵 api 불러오기 -->
+	<script type='text/javascript'src='//dapi.kakao.com/v2/maps/sdk.js?appkey=c396fe0efc7b0e5f37418f17f1fd034d'></script>
+
+	
+	
+
 		<div id="page-wrapper">
+	
 
 		<!-- Header -->
 		<header id="header" class="alt">
@@ -66,7 +72,12 @@
 				<section id="main" class="container">
 					<header>
 						<h2>Generic</h2>
-						<p>A generic page for every non-generic situation.</p>
+						
+						<section>
+						<img id="weather"  width="60" height="60" >
+						<P class = "wether"></P>
+						</section>
+						
 					</header>
 					<div class="box">
 						
@@ -150,13 +161,16 @@
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/weather.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 			
+
 		 <!-- 제주공항33.507014, 126.492953 -->
+
 			<script>
 				var lat_1 = 33.507014;
 				var lng_1 = 126.492953;
@@ -216,32 +230,27 @@
 									var overlay = "<div class='tubeLabel'><span>"
 											+ v.device + "</span></div>";
 									$(".tubeLabel").css("margin-top", "8px");
-									var coordinate = new kakao.maps.LatLng(v.x,
-											v.y);
+									var coordinate = new kakao.maps.LatLng(v.x,v.y);
 									//_kakaoMap.setCenter(coord);
 									var marker = new kakao.maps.Marker({
 										position : coordinate
 									});
 									marker.device = coords.device;
 									marker.setMap(_kakaoMap);
-									var iwContent = '<div style="padding:5px;">Hello World!</div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+									
+									var iwContent = '<div style="padding:5px;">하이</div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
 									iwRemoveable = true;
 									var infowindow = new kakao.maps.InfoWindow(
 											{
 												content : iwContent,
 												removable : iwRemoveable
-											});
-									var iwContent = '<div style="padding:5px;">Hello World!</div>';
-									var infowindow = new kakao.maps.InfoWindow(
-											{
-												content : iwContent
-											});
+											});								
 
 									// 마커에 마우스오버 이벤트를 등록합니다
 									kakao.maps.event.addListener(marker,
 											'mouseover', function() {
 												// 마커에 마우스오버 이벤트가 발생하면 인포윈도우를 마커위에 표시합니다
-												infowindow.open(map, marker);
+												infowindow.open(_kakaoMap, marker);
 											});
 
 									// 마커에 마우스아웃 이벤트를 등록합니다
@@ -249,6 +258,7 @@
 											'mouseout', function() {
 												// 마커에 마우스아웃 이벤트가 발생하면 인포윈도우를 제거합니다
 												infowindow.close();
+												
 											});
 
 									var co = new kakao.maps.CustomOverlay({
