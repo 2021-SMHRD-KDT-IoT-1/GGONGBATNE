@@ -12,8 +12,8 @@ select * from MEMBERS;
 CREATE TABLE GIGI_NAMES (
    GIGI_NUM   NUMBER(20)      NOT NULL,
    GIGI_NAME   varchar2(30)      NOT NULL,
-   GIGI_LOCATION_A   varchar2(30)   ,
-   GIGI_LOCATION_B   varchar2(30)   ,
+   GIGI_LOCATION_A   varchar2(20)   ,
+   GIGI_LOCATION_B   varchar2(20)   ,
    GIGI_AREA   varchar2(20)   not   NULL,
    GIGI_COUNT   number(20)   not   NULL,
    GIGI_CHECK   DATE   not   NULL
@@ -117,4 +117,5 @@ drop sequence sq_giginame_num;
 
 insert into MEMBERS values('smhrd','1234','hongman','4485','306')
 insert into MEMBERS values('mgk','111','hongman','4485','306')
+insert into GIGI_NAMES values('1','jeju','33.507023','126.492958','010','010',sysdate) 
 

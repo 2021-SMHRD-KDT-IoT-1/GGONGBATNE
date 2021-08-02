@@ -34,11 +34,11 @@ public class LoginServiceCon extends HttpServlet {
 			System.out.println("로그인 성공");
 
 
-			session.setAttribute("dto", login_dto);
+			session.setAttribute("mem_dto", login_dto);
 		} else {
 			System.out.println("로그인 실패");
 
-			session.removeAttribute("dto");
+			session.removeAttribute("mem_dto");
 
 			try {
 				response.getWriter().write("loginFail");

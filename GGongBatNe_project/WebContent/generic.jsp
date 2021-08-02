@@ -1,3 +1,7 @@
+
+<%@page import="GGong.Model.Members_DTO"%>
+<%@page import="GGong.Model.Gigi_Names_DAO"%>
+<%@page import="GGong.Model.Gigi_Names_DTO"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <!DOCTYPE HTML>
@@ -20,9 +24,20 @@
 	</head>
 	
 	<body class="is-preload">
+	<%
+	Members_DTO mem_dto = (Members_DTO) session.getAttribute("mem_dto"); 
+	
+	
+    Gigi_Names_DAO dao = new Gigi_Names_DAO();
+	
+    Gigi_Names_DTO gigi_xy = dao.xy(mem_dto.getMem_area());
+	
+		
+	
+	%>
 	
 	<script type='text/javascript'
-				src='//dapi.kakao.com/v2/maps/sdk.js?appkey=e99022b6f91dd955ccad95591a8ecb63'></script>
+				src='//dapi.kakao.com/v2/maps/sdk.js?appkey=c396fe0efc7b0e5f37418f17f1fd034d'></script>
 		<div id="page-wrapper">
 
 		<!-- Header -->
@@ -62,9 +77,9 @@
 						
 				<section class="box special features">
 				<div class="features-row">
-					<section style = "widty:800px;">
+					<section style = "widty:1200px;">
 						<div id="map"
-							style="width: 100%; height: 550px; background-color: black; "></div>
+							style="width: 550px; height: 580px; background-color: black; float: right"></div>
 					
 					</section>
 					<section>
@@ -81,7 +96,7 @@
 										<td>렌탈</td>
 										<td>고장</td>
 										<td><input type='checkbox' id="del_check_all"
-											style='margin-right: 0 !important; appearance: auto !important; opacity: 100 !important;' />삭제</td>
+											style='margin-right: 0 !important; appearance: auto !important; opacity: 100 !important; float: left' />삭제</td>
 									</tr>
 								</thead>
 
@@ -108,12 +123,7 @@
 							</table>
 				</div>
 				
-				</section>		
-					
-						
-						
-						
-						
+				</section>								
 						
 						
 						
@@ -146,10 +156,10 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 			
-			
+		 <!-- 제주공항33.507014, 126.492953 -->
 			<script>
-				var lat_1 = 35.19444429414635;
-				var lng_1 = 126.9530589614602;
+				var lat_1 = 33.507014;
+				var lng_1 = 126.492953;
 				var container_1 = document.getElementById("map");
 				var options_1 = {
 					center : new kakao.maps.LatLng(lat_1, lng_1),
@@ -163,10 +173,10 @@
 					console.log(latlng);
 				});
 				var coords = [ {
-					x : 35.19450,
-					y : 126.95300,
-					device : 82
-				}, {
+					x : <%= gigi_xy.getGigi_location_A()%>,
+					y : <%= gigi_xy.getGigi_location_B()%>
+				
+				}/* , {
 					x : 35.19448,
 					y : 126.95298,
 					device : 83
@@ -194,7 +204,7 @@
 					x : 35.19430,
 					y : 126.95311,
 					device : 89
-				} ];
+				} */ ];
 				var tubes = new Object();
 				var markerArray = new Array();
 				var total = coords.length;

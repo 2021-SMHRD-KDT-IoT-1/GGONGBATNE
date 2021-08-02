@@ -13,8 +13,9 @@
 <link rel="stylesheet" href="assets/css/main.css" />
 </head>
 <body class="landing is-preload">
+
 <%
-		Members_DTO dto = (Members_DTO)session.getAttribute("dto");
+		Members_DTO dto = (Members_DTO)session.getAttribute("mem_dto");
 	
         Members_DAO dao = new Members_DAO();
 		
