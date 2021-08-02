@@ -1,3 +1,5 @@
+<%@page import="GGong.Model.Members_DAO"%>
+<%@page import="GGong.Model.Members_DTO"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <!DOCTYPE HTML>
@@ -40,6 +42,12 @@
 
 
 	<body class="is-preload">
+	<%
+        Members_DTO dto = (Members_DTO)session.getAttribute("dto");
+	
+        Members_DAO dao = new  Members_DAO();		
+	
+	%>
 
 		<!-- Header -->
 		<header id="header">
@@ -81,9 +89,9 @@
 		<!-- 로그인 모듈 -->
 		
 			<form action="LoginServiceCon" id="signup-form" method="post">
-				<input type="text" name="mem_id"  placeholder="사원번호를 입력하세요" >
-				<input type="password" name="mem_pw"  placeholder="비밀번호를 입력하세요" >
-				<input type="submit" id = "sublogin" value="로그인" >
+				<input type="text" name="mem_id"  placeholder="사원번호를 입력하세요" id = "mem_id">
+				<input type="password" name="mem_pw"  placeholder="비밀번호를 입력하세요" id= "mem_pw">
+				<input type="button" value="확인" class="button small" onclick="button_login()">
 				
 			</form>
 		
@@ -104,7 +112,45 @@
 		
 		<!--  한글깨짐 방지 js-->
 		<script src="assets/js/loginmap.js" type="text/javascript"></script>
+<script>
+ 
+//로그인 ajax 코드
+	function button_login(){
+		
+		 id = $('#mem_id').val();
+		 pw = $('#mem_pw').val();
+		 
 
+		 
+	    $.ajax({
+	        url:'LoginServiceCon',
+	        type:'post',
+	        data: {
+	        	
+	        	mem_id : id,  mem_pw: pw,
+	        },
+	        
+	       success:function(data){	 	    	
+	    		console.log("완료!");
+	   			let url = 'index.jsp';
+	   			if(data == 'loginFail'){
+	   				alert('로그인에 실패하였습니다.')
+	   				url = 'login.jsp';
+	   			}
+         	location.replace(url);
+	        },
+	        error:function(){
+	   
+	           alert("에러가 발생하였습니다.");
+	           location.reload(true);
+	           
+
+	           
+	    	}
+	    });	
+
+	}
+ </script>
 		
 
 
