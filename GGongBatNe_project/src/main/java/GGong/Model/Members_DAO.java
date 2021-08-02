@@ -46,15 +46,19 @@ public class Members_DAO {
 		}
 	}
 	
-	public Members_DTO login(Members_DTO inputDto) {
+	public Members_DTO login(Members_DTO dto) {
+		Members_DTO login_dto = null;
 		conn();
 		
 		try {
 			String sql = "select * from members where mem_id = ? and mem_pw = ? ";
 			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, inputDto.getMem_id());
-			psmt.setString(2, inputDto.getMem_pw());
+			psmt.setString(1, dto.getMem_id());
+			psmt.setString(2, dto.getMem_pw());
 			rs = psmt.executeQuery();
+			
+			System.out.println(dto.getMem_id());
+		
 			
 			if(rs.next()) {
 				String mem_id = rs.getString(1);
@@ -62,8 +66,10 @@ public class Members_DAO {
 				String mem_name = rs.getString(3);
 				String mem_phone = rs.getString(4);
 				String mem_area = rs.getString(5);
-			
-				dto = new Members_DTO(mem_id, mem_pw, mem_name, mem_phone, mem_area);
+				
+				login_dto = new Members_DTO(mem_id, mem_pw, mem_name, mem_phone, mem_area);
+				System.out.println(login_dto);
+				
 			}
 		
 		} catch(SQLException e) {
@@ -72,7 +78,7 @@ public class Members_DAO {
 			close();
 		}
 		
-		return dto;
+		return login_dto;
 	}
 	
 	

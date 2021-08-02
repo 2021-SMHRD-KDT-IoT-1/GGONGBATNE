@@ -1,3 +1,5 @@
+<%@page import="GGong.Model.Members_DAO"%>
+<%@page import="GGong.Model.Members_DTO"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <!DOCTYPE HTML>
@@ -11,6 +13,15 @@
 <link rel="stylesheet" href="assets/css/main.css" />
 </head>
 <body class="landing is-preload">
+<%
+		Members_DTO dto = (Members_DTO)session.getAttribute("dto");
+	
+        Members_DAO dao = new Members_DAO();
+		
+		
+	
+	%>
+
 	<div id="page-wrapper">
 
 		<!-- Header -->
@@ -20,12 +31,25 @@
 				<ul>
 					<li><a href="index.jsp">Home</a></li>
 					<li><a href="#" class="icon solid fa-angle-down">Menu</a>
+						
+						<%if(dto !=null) {%>
 						<ul>
 							<li><a href="generic.jsp">지도</a></li>
 							<li><a href="service.jsp">고객센터</a></li>
 								
 						</ul></li>
+					<li><a href="LogoutServiceCon" class="button">Logout</a></li>
+						
+						<%}else{ %>
+						
+							<ul>
+							<li><a href="generic.jsp">지도</a></li>
+							<li><a href="service.jsp">고객센터</a></li>
+								
+						</ul></li>
 					<li><a href="login.jsp" class="button">Login</a></li>
+						<%} %>
+					
 				</ul>
 			</nav>
 		</header>
@@ -174,6 +198,6 @@
 	<script src="assets/js/breakpoints.min.js"></script>
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
-
+ 
 </body>
 </html>

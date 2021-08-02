@@ -116,4 +116,5 @@ drop sequence sq_gigisen_num;
 drop sequence sq_giginame_num;
 
 insert into MEMBERS values('smhrd','1234','hongman','4485','306')
+insert into MEMBERS values('mgk','111','hongman','4485','306')
 
