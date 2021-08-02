@@ -17,13 +17,20 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		
 	</head>
 	
 	<body class="is-preload">
 	
+	<!--  카카오 맵 api 불러오기 -->
 	<script type='text/javascript'
 				src='//dapi.kakao.com/v2/maps/sdk.js?appkey=e99022b6f91dd955ccad95591a8ecb63'></script>
+	<!--  날씨정보 api 불러오기 -->
+	
+	
+    
 		<div id="page-wrapper">
+	
 
 		<!-- Header -->
 		<header id="header" class="alt">
@@ -51,7 +58,12 @@
 				<section id="main" class="container">
 					<header>
 						<h2>Generic</h2>
-						<p>A generic page for every non-generic situation.</p>
+						
+						<section>
+						<img id="weather"  width="60" height="60" >
+						<P class = "wether"></P>
+						</section>
+						
 					</header>
 					<div class="box">
 						
@@ -140,11 +152,14 @@
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/weather.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			
+						
 			
 			
 			<script>
