@@ -1,0 +1,101 @@
+#include <Wire.h>            // Wire 라이브러리를 포함
+#include <AM2320.h>          // AM2320 라이브러리를 포함
+#include <SoftwareSerial.h>
+#include <TinyGPS.h>
+AM2320 th;                   // AM2320 선언
+const int trigPin = 13;
+const int echoPin = 12;
+float duration;
+float  distance = 0;
+int count=0;
+
+
+TinyGPS gps;
+SoftwareSerial ss(4, 3);
+
+void setup() {
+  pinMode(trigPin, OUTPUT);
+  pinMode(echoPin, INPUT);
+  Serial.begin(115200);              // 시리얼 통신 시작
+  ss.begin(9600);
+}
+
+void loop() {
+
+  th.Read();                                 // AM2320 읽기
+
+  digitalWrite(trigPin, LOW);
+  delayMicroseconds(2);
+  digitalWrite(trigPin, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPin, LOW);
+  duration = pulseIn(echoPin, HIGH);
+  distance = duration*0.034/2; //Cm
+
+  
+  
+  
+  bool newData = false;
+
+  unsigned long chars;
+  unsigned short sentences, failed;
+  // 속도조절
+  delay(1000);   
+  for (unsigned long start = millis(); millis() - start < 1000;){
+    while (ss.available()){
+      char c = ss.read();
+      // Serial.write(c); // uncomment this line if you want to see the GPS data flowing
+      if (gps.encode(c)) // Did a new valid sentence come in?
+        newData = true;
+    }
+
+  }
+
+  if (newData){
+
+    float flat, flon;
+    unsigned long age;
+    gps.f_get_position(&flat, &flon, &age);
+
+    if(count>3){
+
+      if(distance>10 && distance<60){
+      Serial.println();
+      Serial.print(distance);
+      Serial.print(",");
+      Serial.print(th.t);
+      Serial.print(",");
+      Serial.print(th.h);
+      Serial.print(",");
+      Serial.print(flat == TinyGPS::GPS_INVALID_F_ANGLE ? 0.0 : flat, 6);
+      Serial.print(",");
+      Serial.print(flon == TinyGPS::GPS_INVALID_F_ANGLE ? 0.0 : flon, 6);
+      }
+    }
+  }else{
+
+    if(distance>10 && distance<60){
+    Serial.println();
+    Serial.print(distance);
+    Serial.print(",");
+    Serial.print(th.t);
+    Serial.print(",");
+    Serial.print(th.h);
+    }
+
+  }
+  
+  gps.stats(&chars, &sentences, &failed);
+
+  if (chars == 0){
+    Serial.println("** No characters received from GPS: check wiring **");
+  }
+
+
+ 
+  count+=1;
+  delay(1000);                              
+
+ 
+
+}
