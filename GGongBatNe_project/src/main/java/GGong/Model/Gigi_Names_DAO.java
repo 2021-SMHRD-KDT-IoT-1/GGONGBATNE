@@ -7,13 +7,13 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+
 public class Gigi_Names_DAO {
 
 	Connection conn = null;
 	PreparedStatement psmt = null;
 	int cnt = 0;
 	ResultSet rs = null;
-	ArrayList<Gigi_Names_DTO> list = null;
 	Gigi_Names_DTO dto = null;
 
 	public void conn() {
@@ -45,26 +45,34 @@ public class Gigi_Names_DAO {
 		}
 	}
 	
-	public  Gigi_Names_DTO xy(String GIGI_AREA) {
-		Gigi_Names_DTO xy_dto = null;
+	public  ArrayList<Gigi_Names_DTO> select(String GIGI_AREA) {
+		ArrayList<Gigi_Names_DTO> list = new ArrayList<Gigi_Names_DTO>();
 		conn();
 		
 		try {
-			String sql = "select GIGI_LOCATION_A, GIGI_LOCATION_B, GIGI_NAME from Gigi_Names where GIGI_AREA = ?";
+			String sql = "select * from Gigi_Names where GIGI_AREA = ?";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, GIGI_AREA );
 			
 			rs = psmt.executeQuery();
-
-			if(rs.next()) {
+			
+			while(rs.next()) {
+			
 				
+				int gigi_num = rs.getInt("GIGI_num");
+				String gigi_name = rs.getString("GIGI_NAME");
 				String gigi_location_A = rs.getString("GIGI_LOCATION_A");
 				String gigi_location_B = rs.getString("GIGI_LOCATION_B");
-				String gigi_name = rs.getString("GIGI_NAME");
+				String gigi_area = rs.getString("GIGI_area");
+				int gigi_count = rs.getInt("GIGI_count");
+				String gigi_check = rs.getString("gigi_check");
 				
-				xy_dto = new Gigi_Names_DTO(gigi_location_A,gigi_location_B,gigi_name);
-				System.out.println(xy_dto);
 				
+				Gigi_Names_DTO xy_dto = new Gigi_Names_DTO(gigi_num, gigi_name, gigi_location_A, gigi_location_B, gigi_area, gigi_count, gigi_check);
+				
+				list.add(xy_dto);
+				
+			
 			}
 		
 		} catch(SQLException e) {
@@ -73,7 +81,7 @@ public class Gigi_Names_DAO {
 			close();
 		}
 		
-		return xy_dto;
+		return list;
 	
 	}
 	

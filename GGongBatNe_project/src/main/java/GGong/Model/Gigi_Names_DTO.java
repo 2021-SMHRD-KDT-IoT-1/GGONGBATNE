@@ -21,7 +21,7 @@ public class Gigi_Names_DTO {
 		this.gigi_count = gigi_count;
 		this.gigi_check = gigi_check;
 	}
-	public Gigi_Names_DTO(String gigi_location_A, String gigi_location_B, String gigi_name) {
+	public Gigi_Names_DTO(String gigi_name, String gigi_location_A, String gigi_location_B) {
 		super();	
 		this.gigi_location_A = gigi_location_A;
 		this.gigi_location_B = gigi_location_B;

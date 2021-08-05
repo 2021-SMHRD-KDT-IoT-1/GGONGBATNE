@@ -75,6 +75,46 @@ public class Gigi_Sensors_DAO {
 	
 	
 	
+	public  ArrayList<Gigi_Sensors_DTO> select(String GIGI_AREA) {
+		ArrayList<Gigi_Sensors_DTO> list = new ArrayList<Gigi_Sensors_DTO>();
+		conn();
+		
+		try {
+			String sql = "select * from Gigi_Sensors where GIGI_AREA = ?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, GIGI_AREA );
+			
+			rs = psmt.executeQuery();
+			
+			while(rs.next()) {
+			
+				
+				int gigi_num = rs.getInt("GIGI_num");
+				String gigi_name = rs.getString("GIGI_NAME");
+				String gigi_vol= rs.getString("GIGI_vol");
+				String gigi_temp= rs.getString("GIGI_temp");
+				String gigi_hum = rs.getString("GIGI_hum");
+				String gigi_area = rs.getString("GIGI_area");
+				String gigi_date = rs.getString("gigi_date");
+				
+				
+				Gigi_Sensors_DTO sensor_dto = new Gigi_Sensors_DTO(gigi_num, gigi_name, gigi_vol, gigi_temp, gigi_hum, gigi_area, gigi_date);
+				
+				list.add(sensor_dto);
+				
+			
+			}
+		
+		} catch(SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		
+		return list;
+	
+	}
+	
 	
 	
 	

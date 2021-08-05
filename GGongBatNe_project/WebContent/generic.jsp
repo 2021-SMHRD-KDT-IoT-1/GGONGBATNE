@@ -1,4 +1,7 @@
 
+<%@page import="GGong.Model.Gigi_Sensors_DTO"%>
+<%@page import="GGong.Model.Gigi_Sensors_DAO"%>
+<%@page import="java.util.ArrayList"%>
 <%@page import="GGong.Model.Members_DTO"%>
 <%@page import="GGong.Model.Gigi_Names_DAO"%>
 <%@page import="GGong.Model.Gigi_Names_DTO"%>
@@ -20,7 +23,7 @@
 		<title>Generic - Alpha by HTML5 UP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/main2.css" />
 		
 	</head>
 	
@@ -29,16 +32,21 @@
 	Members_DTO mem_dto = (Members_DTO) session.getAttribute("mem_dto"); 
 	
 	
-    Gigi_Names_DAO dao = new Gigi_Names_DAO();
+    Gigi_Names_DAO name_dao = new Gigi_Names_DAO();
+	ArrayList<Gigi_Names_DTO> gigi_list = name_dao.select(mem_dto.getMem_area());
+
+	Gigi_Sensors_DAO snesor_dao = new Gigi_Sensors_DAO();
+	ArrayList<Gigi_Sensors_DTO> gigi_seneors = snesor_dao.select(mem_dto.getMem_area());
 	
-    Gigi_Names_DTO gigi_xy = dao.xy(mem_dto.getMem_area());
 	
-		
 	
 	%>
 	
+	
+	
+	
 	<!--  카카오 맵 api 불러오기 -->
-	<script type='text/javascript'src='//dapi.kakao.com/v2/maps/sdk.js?appkey=c396fe0efc7b0e5f37418f17f1fd034d'></script>
+	<script type='text/javascript'src='//dapi.kakao.com/v2/maps/sdk.js?appkey=e99022b6f91dd955ccad95591a8ecb63'></script>
 
 	
 	
@@ -87,10 +95,10 @@
 						
 						
 				<section class="box special features">
-				<div class="features-row">
-					<section style = "widty:1200px;">
+				<div class="features-row" style="widty:500px;">
+					<section style =  "height: 550px; padding-left: 0">
 						<div id="map"
-							style="width: 550px; height: 580px; background-color: black; float: right"></div>
+							style="width: 100%; height: 100%; background-color: black; float: right"></div>
 					
 					</section>
 					<section>
@@ -102,14 +110,26 @@
 									<!-- 첫번째 행 -->
 									<tr>
 										<td>No.</td>
-										<td>기기번호</td>
-										<td>고장여부</td>
-										<td>렌탈</td>
-										<td>고장</td>
-										<td><input type='checkbox' id="del_check_all"
-											style='margin-right: 0 !important; appearance: auto !important; opacity: 100 !important; float: left' />삭제</td>
+										<td>기기명</td>
+										<td>현재 상태</td>
+										<td>담당자</td>
 									</tr>
+											
+									
+<!-- 									for문 이용해서 센서 값 불러오기		 -->
+											
+									
 								</thead>
+								<%for(int i=0; i<gigi_seneors.size(); i++){ %>
+									<tr>
+										<td><%= i+1 %></td>
+										<td><%= gigi_seneors.get(i).getGigi_name() %></td>
+										<td><%= gigi_seneors.get(i).getGigi_vol() %></td>
+										<td><%= mem_dto.getMem_name() %></td>
+									</tr>
+										
+										
+									<%}; %>		
 
 							</table>
 						</div>
@@ -167,11 +187,13 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-			
+		
 
 		 <!-- 제주공항33.507014, 126.492953 -->
 
 			<script>
+			
+
 				var lat_1 = 33.507014;
 				var lng_1 = 126.492953;
 				var container_1 = document.getElementById("map");
@@ -186,11 +208,11 @@
 					var latlng = mouseEvent.latLng;
 					console.log(latlng);
 				});
-				var coords = [ {
-					x : <%= gigi_xy.getGigi_location_A()%>,
-					y : <%= gigi_xy.getGigi_location_B()%>
-				
-				}/* , {
+				var coords = [  {
+					x : <%=gigi_list.get(0).getGigi_location_A()%>,
+					y : <%=gigi_list.get(0).getGigi_location_B()%>
+					
+				}/* {
 					x : 35.19448,
 					y : 126.95298,
 					device : 83
@@ -219,6 +241,22 @@
 					y : 126.95311,
 					device : 89
 				} */ ];
+				
+				<%
+				for (int i = 0; i < gigi_list.size(); i++) {
+				%>
+					var abc = {x : <%=gigi_list.get(i).getGigi_location_A()%>,
+							y : <%=gigi_list.get(i).getGigi_location_B()%>,
+							device : <%=gigi_list.get(i).getGigi_name()%>
+							};
+					coords.push(abc);
+					console.log("abc"+abc);
+				<%	
+				};
+				%>
+
+
+				
 				var tubes = new Object();
 				var markerArray = new Array();
 				var total = coords.length;
