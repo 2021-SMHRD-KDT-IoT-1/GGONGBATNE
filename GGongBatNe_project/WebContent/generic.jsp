@@ -94,14 +94,14 @@
 							<!-- 작업 부분 -->
 						
 						
-				<section class="box special features">
+				<section class="box special features" >
 				<div class="features-row" style="widty:500px;">
-					<section style =  "height: 550px; padding-left: 0">
+					<section class="sec1" style =  "height: 550px; padding-left: 0">
 						<div id="map"
 							style="width: 100%; height: 100%; background-color: black; float: right"></div>
 					
 					</section>
-					<section>
+					<section class="sec2">
 
 						<div id="device_div"
 							style="overflow: auto">
@@ -138,24 +138,13 @@
 				</section>
 						
 						
-				<section>
-				<div><table id="kkkkkk">
-								<thead>
-									<!-- 첫번째 행 -->
-									<tr>
-										<td>통계</td>
-										<td>통계</td>
-										
-										<td><input type='checkbox' id="del_check_all"
-											style='margin-right: 0 !important; appearance: auto !important; opacity: 100 !important;' />삭제</td>
-									</tr>
-								</thead>
-
-							</table>
-				</div>
 				
-				</section>								
-						
+				
+				<section>							
+					<canvas id="myChart" height="300" width="650"></canvas>
+					<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>		
+				</section>
+				
 						
 						
 					</div>
@@ -208,11 +197,7 @@
 					var latlng = mouseEvent.latLng;
 					console.log(latlng);
 				});
-				var coords = [  {
-					x : <%=gigi_list.get(0).getGigi_location_A()%>,
-					y : <%=gigi_list.get(0).getGigi_location_B()%>
-					
-				}/* {
+				var coords = [  /* {
 					x : 35.19448,
 					y : 126.95298,
 					device : 83
@@ -324,6 +309,114 @@
 									    	}
 										}); */
 								});
+				
+				
+// ====================================================================== 파이차트 시험구간		
+
+
+var name12 =[];
+var count12 = [];
+
+
+<%
+for (int i = 0; i < gigi_list.size(); i++) {
+%>	var n=<%=gigi_list.get(i).getGigi_name()%>;
+	name12.push(n);
+	
+<%	
+};
+%>
+console.log("aaaa"+name12);
+
+<%
+for (int i = 0; i < gigi_list.size(); i++) {
+%>
+var c=<%=gigi_list.get(i).getGigi_count()%>;
+	count12.push(c);
+	
+<%	
+};
+%>
+
+console.log("cccc"+count12);
+
+
+
+
+var ctx = document.getElementById("myChart").getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: name12,
+        datasets: [{
+            label: '빈도수',
+            data: count12,
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255,99,132,1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255,99,132,1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255,99,132,1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255,99,132,1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        maintainAspectRatio: false,
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
+    }
+});
+
+
+
+
+				
+				
+				
+				
 			</script>
 
 	</body>
