@@ -38,7 +38,7 @@
 	Gigi_Sensors_DAO snesor_dao = new Gigi_Sensors_DAO();
 	ArrayList<Gigi_Sensors_DTO> gigi_seneors = snesor_dao.select(mem_dto.getMem_area());
 	
-	
+	System.out.println(gigi_list.get(0).getGigi_name());
 	
 	%>
 	
@@ -124,7 +124,7 @@
 									<tr>
 										<td><%= i+1 %></td>
 										<td><%= gigi_seneors.get(i).getGigi_name() %></td>
-										<td><%= gigi_seneors.get(i).getGigi_vol() %></td>
+										<td><%= gigi_seneors.get(i).getGigi_vol() %> %</td>
 										<td><%= mem_dto.getMem_name() %></td>
 									</tr>
 										
@@ -141,7 +141,7 @@
 				
 				
 				<section>							
-					<canvas id="myChart" height="300" width="650"></canvas>
+					<canvas id="myChart" height="300" width="550"></canvas>
 					<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>		
 				</section>
 				
@@ -183,135 +183,188 @@
 			<script>
 			
 
-				var lat_1 = 33.507014;
-				var lng_1 = 126.492953;
-				var container_1 = document.getElementById("map");
-				var options_1 = {
-					center : new kakao.maps.LatLng(lat_1, lng_1),
-					level : 3,
-					maxLevel : 12
-				};
-				var _kakaoMap = new kakao.maps.Map(container_1, options_1);
-				kakao.maps.event.addListener(_kakaoMap, 'click', function(
-						mouseEvent) {
-					var latlng = mouseEvent.latLng;
-					console.log(latlng);
-				});
-				var coords = [  /* {
-					x : 35.19448,
-					y : 126.95298,
-					device : 83
-				}, {
-					x : 35.19442,
-					y : 126.95294,
-					device : 84
-				}, {
-					x : 35.19438,
-					y : 126.95293,
-					device : 85
-				}, {
-					x : 35.19436,
-					y : 126.95297,
-					device : 86
-				}, {
-					x : 35.19435,
-					y : 126.95300,
-					device : 87
-				}, {
-					x : 35.19433,
-					y : 126.95303,
-					device : 88
-				}, {
-					x : 35.19430,
-					y : 126.95311,
-					device : 89
-				} */ ];
+// 				var lat_1 = 33.507014;
+// 				var lng_1 = 126.492953;
+// 				var container_1 = document.getElementById("map");
+// 				var options_1 = {
+// 					center : new kakao.maps.LatLng(lat_1, lng_1),
+// 					level : 3,
+// 					maxLevel : 12
+// 				};
+// 				var _kakaoMap = new kakao.maps.Map(container_1, options_1);
+// 				kakao.maps.event.addListener(_kakaoMap, 'click', function(
+// 						mouseEvent) {
+// 					var latlng = mouseEvent.latLng;
+// 					console.log(latlng);
+// 				});
+// 				var coords = [];
 				
-				<%
-				for (int i = 0; i < gigi_list.size(); i++) {
-				%>
-					var abc = {x : <%=gigi_list.get(i).getGigi_location_A()%>,
-							y : <%=gigi_list.get(i).getGigi_location_B()%>,
-							device : <%=gigi_list.get(i).getGigi_name()%>
-							};
-					coords.push(abc);
-					console.log("abc"+abc);
-				<%	
-				};
-				%>
+<%-- 				<% --%>
+// 				for (int i = 0; i < gigi_list.size(); i++) {
+<%-- 				%> --%>
+<%-- 					var abc = {x : <%=gigi_list.get(i).getGigi_location_A()%>, --%>
+<%-- 							y : <%=gigi_list.get(i).getGigi_location_B()%> --%>
+// 							};
+// 					coords.push(abc);
+// 					console.log("abc"+abc);
+<%-- 				<%	 --%>
+// 				};
+<%-- 				%> --%>
 
 
 				
-				var tubes = new Object();
-				var markerArray = new Array();
-				var total = coords.length;
-				var avail = 0;
-				$
-						.each(
-								coords,
-								function(i, v) {
-									var overlay = "<div class='tubeLabel'><span>"
-											+ v.device + "</span></div>";
-									$(".tubeLabel").css("margin-top", "8px");
-									var coordinate = new kakao.maps.LatLng(v.x,v.y);
-									//_kakaoMap.setCenter(coord);
-									var marker = new kakao.maps.Marker({
-										position : coordinate
-									});
-									marker.device = coords.device;
-									marker.setMap(_kakaoMap);
+// 				var tubes = new Object();
+// 				var markerArray = new Array();
+// 				var total = coords.length;
+// 				var avail = 0;
+// 				$
+// 						.each(
+// 								coords,
+// 								function(i, v) {
+// 									var overlay = "<div class='tubeLabel'><span>"
+// 											+ v.device + "</span></div>";
+// 									$(".tubeLabel").css("margin-top", "8px");
+// 									var coordinate = new kakao.maps.LatLng(v.x,v.y);
+// 									//_kakaoMap.setCenter(coord);
+// 									var marker = new kakao.maps.Marker({
+// 										position : coordinate
+// 									});
+// 									marker.device = coords.device;
+// 									marker.setMap(_kakaoMap);
 									
-									var iwContent = '<div style="padding:5px;">하이</div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
-									iwRemoveable = true;
-									var infowindow = new kakao.maps.InfoWindow(
-											{
-												content : iwContent,
-												removable : iwRemoveable
-											});								
+// 									var iwContent = '<div style="padding:5px;">하이</div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+// 									iwRemoveable = true;
+// 									var infowindow = new kakao.maps.InfoWindow(
+// 											{
+// 												content : iwContent,
+// 												removable : iwRemoveable
+// 											});								
 
-									// 마커에 마우스오버 이벤트를 등록합니다
-									kakao.maps.event.addListener(marker,
-											'mouseover', function() {
-												// 마커에 마우스오버 이벤트가 발생하면 인포윈도우를 마커위에 표시합니다
-												infowindow.open(_kakaoMap, marker);
-											});
+// 									// 마커에 마우스오버 이벤트를 등록합니다
+// 									kakao.maps.event.addListener(marker,
+// 											'mouseover', function() {
+// 												// 마커에 마우스오버 이벤트가 발생하면 인포윈도우를 마커위에 표시합니다
+// 												infowindow.open(_kakaoMap, marker);
+// 											});
 
-									// 마커에 마우스아웃 이벤트를 등록합니다
-									kakao.maps.event.addListener(marker,
-											'mouseout', function() {
-												// 마커에 마우스아웃 이벤트가 발생하면 인포윈도우를 제거합니다
-												infowindow.close();
+// 									// 마커에 마우스아웃 이벤트를 등록합니다
+// 									kakao.maps.event.addListener(marker,
+// 											'mouseout', function() {
+// 												// 마커에 마우스아웃 이벤트가 발생하면 인포윈도우를 제거합니다
+// 												infowindow.close();
 												
-											});
+// 											});
 
-									var co = new kakao.maps.CustomOverlay({
-										position : coordinate,
-										content : overlay
-									});
-									co.setMap(_kakaoMap);
-									markerArray.push(marker);
+// 									var co = new kakao.maps.CustomOverlay({
+// 										position : coordinate,
+// 										content : overlay
+// 									});
+// 									co.setMap(_kakaoMap);
+// 									markerArray.push(marker);
 
-									/* 	$.ajax({
-										 	data: {
-										        device_id: v.device
-									        },
-									        url:'SelectDeviceState',
-									        contentType : "application/json; charset:euc-kr",
-											dataType: "JSON",
-									        success: function(jsonList){
-									        	if ($.trim(jsonList.state) == 'F') {
-									        		avail ++;
-									        	}
-												$("#statediv").text(avail + "/" + total);
-									        },
-									        error:function(a, b, c){
-									            alert("에러가 발생하였습니다.");
-									    	}
-										}); */
-								});
+// 									/* 	$.ajax({
+// 										 	data: {
+// 										        device_id: v.device
+// 									        },
+// 									        url:'SelectDeviceState',
+// 									        contentType : "application/json; charset:euc-kr",
+// 											dataType: "JSON",
+// 									        success: function(jsonList){
+// 									        	if ($.trim(jsonList.state) == 'F') {
+// 									        		avail ++;
+// 									        	}
+// 												$("#statediv").text(avail + "/" + total);
+// 									        },
+// 									        error:function(a, b, c){
+// 									            alert("에러가 발생하였습니다.");
+// 									    	}
+// 										}); */
+// 								});
 				
 				
-// ====================================================================== 파이차트 시험구간		
+// ======================================================== 지도 연습				
+				
+
+				
+				
+				var mapContainer = document.getElementById('map'), // 지도를 표시할 div  
+			    mapOption = { 
+			        center: new kakao.maps.LatLng(33.507014, 126.492953), // 지도의 중심좌표
+			        level: 3, // 지도의 확대 레벨
+			        maxLevel : 12
+			    };
+
+			var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+			 
+			// 마커를 표시할 위치와 내용을 가지고 있는 객체 배열입니다 
+			var positions = [
+// 			    {
+// 			        content: '<div>카카오</div>', 
+// 			        latlng: new kakao.maps.LatLng(33.450705, 126.570677)
+// 			    },
+// 			    {
+// 			        content: '<div>생태연못</div>', 
+// 			        latlng: new kakao.maps.LatLng(33.450936, 126.569477)
+// 			    },
+// 			    {
+// 			        content: '<div>텃밭</div>', 
+// 			        latlng: new kakao.maps.LatLng(33.450879, 126.569940)
+// 			    },
+// 			    {
+// 			        content: '<div>근린공원</div>',
+// 			        latlng: new kakao.maps.LatLng(33.451393, 126.570738)
+// 			    }
+			];
+			
+			
+			
+			<%
+			for (int i = 0; i < gigi_list.size(); i++) {
+			%> 
+				var na = <%=gigi_list.get(i).getGigi_name()%>;
+				var abc = {content : '<div>'+na+'</div>',
+						latlng : new kakao.maps.LatLng( <%=gigi_list.get(i).getGigi_location_A()%>,<%=gigi_list.get(i).getGigi_location_B()%>)
+						};
+				positions.push(abc);
+				console.log("abc"+abc);
+			<%	
+			};
+			%> 
+
+			for (var i = 0; i < positions.length; i ++) {
+			    // 마커를 생성합니다
+			    var marker = new kakao.maps.Marker({
+			        map: map, // 마커를 표시할 지도
+			        position: positions[i].latlng // 마커의 위치
+			    });
+
+			    // 마커에 표시할 인포윈도우를 생성합니다 
+			    var infowindow = new kakao.maps.InfoWindow({
+			        content: positions[i].content // 인포윈도우에 표시할 내용
+			    });
+
+			    // 마커에 mouseover 이벤트와 mouseout 이벤트를 등록합니다
+			    // 이벤트 리스너로는 클로저를 만들어 등록합니다 
+			    // for문에서 클로저를 만들어 주지 않으면 마지막 마커에만 이벤트가 등록됩니다
+			    kakao.maps.event.addListener(marker, 'mouseover', makeOverListener(map, marker, infowindow));
+			    kakao.maps.event.addListener(marker, 'mouseout', makeOutListener(infowindow));
+			}
+
+			// 인포윈도우를 표시하는 클로저를 만드는 함수입니다 
+			function makeOverListener(map, marker, infowindow) {
+			    return function() {
+			        infowindow.open(map, marker);
+			    };
+			}
+
+			// 인포윈도우를 닫는 클로저를 만드는 함수입니다 
+			function makeOutListener(infowindow) {
+			    return function() {
+			        infowindow.close();
+			    };
+			}
+				
+// ====================================================================== 바 차트 		
 
 
 var name12 =[];
@@ -322,11 +375,11 @@ var count12 = [];
 for (int i = 0; i < gigi_list.size(); i++) {
 %>	var n=<%=gigi_list.get(i).getGigi_name()%>;
 	name12.push(n);
-	
+	console.log("aaaa"+name12);
 <%	
 };
 %>
-console.log("aaaa"+name12);
+
 
 <%
 for (int i = 0; i < gigi_list.size(); i++) {

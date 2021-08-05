@@ -50,7 +50,7 @@ public class Gigi_Names_DAO {
 		conn();
 		
 		try {
-			String sql = "select * from Gigi_Names where GIGI_AREA = ?";
+			String sql = "select * from Gigi_Names where GIGI_AREA = ? order by GIGI_Num";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, GIGI_AREA );
 			

@@ -31,7 +31,7 @@ public class FlaskData extends HttpServlet {
 		String gigi_location_b = request.getParameter("gigi_location_b"); 
 		
 		System.out.println("기기 이름 : "+gigi_name);
-		System.out.println("기기 용량 : "+gigi_vol);
+		System.out.println("기기 용량 : "+gigi_vol + "%");
 		System.out.println("기기 온도 : "+gigi_temp);
 		System.out.println("기기 습도 : "+gigi_hum);
 		System.out.println("기기 위도 : "+gigi_location_a);
