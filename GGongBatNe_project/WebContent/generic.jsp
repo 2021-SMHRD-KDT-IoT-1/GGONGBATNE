@@ -35,8 +35,8 @@
     Gigi_Names_DAO name_dao = new Gigi_Names_DAO();
 	ArrayList<Gigi_Names_DTO> gigi_list = name_dao.select(mem_dto.getMem_area());
 
-	Gigi_Sensors_DAO snesor_dao = new Gigi_Sensors_DAO();
-	ArrayList<Gigi_Sensors_DTO> gigi_seneors = snesor_dao.select(mem_dto.getMem_area());
+	Gigi_Sensors_DAO sensor_dao = new Gigi_Sensors_DAO();
+	ArrayList<Gigi_Sensors_DTO> gigi_seneors = sensor_dao.select(mem_dto.getMem_area());
 	
 	System.out.println(gigi_list.get(0).getGigi_name());
 	
@@ -295,7 +295,27 @@
 			    };
 
 			var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+			
+			
+			// 마커 이미지 바꾸기
+			
+			var markerImageSrc = 'https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/category.png'; 
+			
+			
+			function createMarkerImage(src, size, options) {
+			    var markerImage = new kakao.maps.MarkerImage(src, size, options);
+			    return markerImage;            
+			}
+			
+			var imageSize = new kakao.maps.Size(22, 26),
+            	imageOptions = {  
+                spriteOrigin: new kakao.maps.Point(10, 0),    
+                spriteSize: new kakao.maps.Size(36, 98)  };
 			 
+			var markerImage = createMarkerImage(markerImageSrc, imageSize, imageOptions);
+			
+			console.log("asasas");
+			
 			// 마커를 표시할 위치와 내용을 가지고 있는 객체 배열입니다 
 			var positions = [
 // 			    {
@@ -315,28 +335,32 @@
 // 			        latlng: new kakao.maps.LatLng(33.451393, 126.570738)
 // 			    }
 			];
-			
-			
-			
+					
 			<%
 			for (int i = 0; i < gigi_list.size(); i++) {
 			%> 
 				var na = <%=gigi_list.get(i).getGigi_name()%>;
 				var abc = {content : '<div>'+na+'</div>',
-						latlng : new kakao.maps.LatLng( <%=gigi_list.get(i).getGigi_location_A()%>,<%=gigi_list.get(i).getGigi_location_B()%>)
+						latlng : new kakao.maps.LatLng( <%=gigi_list.get(i).getGigi_location_A()%>,<%=gigi_list.get(i).getGigi_location_B()%>),
+             	        image	: markerImage
+								
+//	new kakako.maps.MaekerImage(imageSrc, imageSize, imageOption)(if문으로 마커 결정 하기)						
+				
 						};
 				positions.push(abc);
 				console.log("abc"+abc);
-			<%	
-			};
-			%> 
+			<% }; %> 
 
 			for (var i = 0; i < positions.length; i ++) {
 			    // 마커를 생성합니다
 			    var marker = new kakao.maps.Marker({
 			        map: map, // 마커를 표시할 지도
-			        position: positions[i].latlng // 마커의 위치
-			    });
+			        position: positions[i].latlng, // 마커의 위치
+			      	image: positions[i].image
+			    });  // 위치랑 마우스 올렸을때 나오는곳 배열 저장
+
+			    
+
 
 			    // 마커에 표시할 인포윈도우를 생성합니다 
 			    var infowindow = new kakao.maps.InfoWindow({
