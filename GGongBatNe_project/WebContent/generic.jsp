@@ -299,7 +299,7 @@
 			
 			// 마커 이미지 바꾸기
 			
-			var markerImageSrc = 'https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/category.png'; 
+			var markerImageSrc = 'https://i.ibb.co/VjD3JNj/blue.png'; 
 			
 			
 			function createMarkerImage(src, size, options) {
@@ -307,10 +307,10 @@
 			    return markerImage;            
 			}
 			
-			var imageSize = new kakao.maps.Size(22, 26),
+			var imageSize = new kakao.maps.Size(50, 44),
             	imageOptions = {  
-                spriteOrigin: new kakao.maps.Point(10, 0),    
-                spriteSize: new kakao.maps.Size(36, 98)  };
+                spriteOrigin: new kakao.maps.Point(0, 0),    
+                spriteSize: new kakao.maps.Size(50, 44)  };
 			 
 			var markerImage = createMarkerImage(markerImageSrc, imageSize, imageOptions);
 			

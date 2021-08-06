@@ -91,13 +91,13 @@ public class Gigi_Names_DAO {
 		conn();
 		
 		try {
-			String sql = "update GIGI_NAMES set GIGI_LOCATION_A=? and GIGI_LOCATION_B=? where GIGI_NAME=?";
+			String sql = "update GIGI_NAMES set GIGI_LOCATION_A=?, GIGI_LOCATION_B=? where GIGI_NAME=?";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, dto.getGigi_location_A() );
 			psmt.setString(2, dto.getGigi_location_B() );
 			psmt.setString(3, dto.getGigi_name() );
 			
-			cnt = psmt.executeUpdate(sql);
+			cnt = psmt.executeUpdate();
 			
 		
 
