@@ -96,11 +96,11 @@
 										<div style="display: inline-block;">
 											<div class='CurrIcon Icon'></div>
 										</div>
-										<div class='CurrTemp'></div>
+										<div class='CurrTemp' style = "margin-right: 15px;"></div>
 										<div style="display: inline-block;">
 											<div class='Currweather' style="float: right;"></div>
 											<br>
-											<div class='City' style="float: right;"></div>
+											<div class='City' style="float: right; margin-right: 10px;"></div>
 										</div>
 									</div>
 									<div class='slideItem'>
