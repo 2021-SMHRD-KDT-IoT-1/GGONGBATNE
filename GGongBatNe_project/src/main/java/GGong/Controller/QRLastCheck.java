@@ -17,7 +17,7 @@ public class QRLastCheck extends HttpServlet {
 		
 		System.out.println(gigi_name);
 		
-		
+		//
 		
 	}
 
