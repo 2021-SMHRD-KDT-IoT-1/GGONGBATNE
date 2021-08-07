@@ -18,6 +18,11 @@
 	</head>
 	<body class="is-preload">
 	
+	<%
+		String gigi_name1 = request.getParameter("gigi_name");
+			System.out.println(gigi_name1);
+	%>
+	
 		<div id="page-wrapper">
 
 		<!-- Header -->
@@ -59,7 +64,7 @@
 								</div>
 								<div class="col-6 col-12-mobilep">
 
-									<input type="text" name="gigi_name"  value="" placeholder="기기번호" />
+									<input type="text" name="gigi_name"  value="<%=gigi_name1 %>" placeholder="기기번호" />
 
 								</div>
 								<div class="col-6 col-12-mobilep">
