@@ -17,7 +17,7 @@ public class LogoutServiceCon extends HttpServlet {
 		HttpSession session = request.getSession();
 		
 		
-		session.removeAttribute("dto");
+		session.removeAttribute("mem_dto");
 		
 		response.sendRedirect("index.jsp");
 		

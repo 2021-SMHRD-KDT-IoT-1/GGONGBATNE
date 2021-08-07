@@ -98,7 +98,7 @@
 
 		<!-- Scripts -->
 		<!-- 로그인 자바스크립트에서 로그인되면 로그인 되었습니다 추가햇는데 데이터 받아서 연동 시켜야될듯 -->
-		<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=7afc685329a94abf98fb3fc9b7499f90"></script>
+		<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9251a02f01537afedfa5e0e6b3874711"></script>
 		<script src="assets/js/loginmap.js"></script>
 		<script src="assets/js/jquery.min.js"></script>
 		<script src="assets/js/jquery.scrollex.min.js"></script>
