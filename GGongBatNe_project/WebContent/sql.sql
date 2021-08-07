@@ -14,21 +14,24 @@ CREATE TABLE GIGI_NAMES (
    GIGI_NAME   varchar2(30)      NOT NULL,
    GIGI_LOCATION_A   varchar2(20)   ,
    GIGI_LOCATION_B   varchar2(20)   ,
-   GIGI_AREA   varchar2(20)   not   NULL,
-   GIGI_COUNT   number(20)   not   NULL,
-   GIGI_CHECK   DATE   not   NULL
+   GIGI_VOL   varchar2(30)      NOT   NULL,
+   GIGI_TEMP   varchar2(30)      NOT   NULL,
+   GIGI_HUM   varchar2(30)      NOT   NULL,
+   GIGI_AREA   varchar2(20)   NOT   NULL,
+   GIGI_COUNT   number(20)   NOT   NULL,
+   GIGI_CHECK   DATE   NOT   NULL
 );
 select * from GIGI_NAMES;
 
 
 ----------   센서 데이터 수집 테이블   -------------
 CREATE TABLE GIGI_SENSORS (
-   GIGI_NUM   NUMBER(20)      NOT NULL,
    GIGI_NAME   varchar2(30)      NOT NULL,
    GIGI_VOL   varchar2(30)      NOT   NULL,
    GIGI_TEMP   varchar2(30)      NOT   NULL,
    GIGI_HUM   varchar2(30)      NOT   NULL,
    GIGI_AREA   varchar2(20)      NOT   NULL,
+   GIGI_CHECK   DATE,
    GIGI_DATE   DATE      NOT NULL
 );
 select * from GIGI_SENSORS;
@@ -38,13 +41,11 @@ CREATE TABLE COMPLAINTS (
    COM_NUM   NUMBER(20)      NOT NULL,
    GIGI_NAME   varchar2(30)      ,
    COM_TITLE   varchar2(30)   NOT   NULL,
-   COM_CONTENTS   varchar2(300)   not   NULL,
+   COM_CONTENTS   varchar2(300)   NOT   NULL,
    COM_CONTACT  varchar2(30),
-   COM_DATE   DATE   not   NULL
+   COM_DATE   DATE   NOT   NULL
 );
 select * from COMPLAINTS;
-
-
 
 ----------  제약조건   -------------
 
@@ -82,13 +83,6 @@ start with 1
 minvalue 1 
 nocycle;
 
-----------   기기 센서 시퀀스   ------------------
-create sequence sq_gigisen_num
-increment by 1 
-start with 1 
-minvalue 1 
-nocycle;
-
 ----------   기기 네임 정보 시퀀스   ---------------
 create sequence sq_giginame_num
 increment by 1 
@@ -116,6 +110,7 @@ drop sequence sq_gigisen_num;
 drop sequence sq_giginame_num;
 
 insert into MEMBERS values('smhrd','1234','hongman','4485','306')
-insert into MEMBERS values('mgk','111','hongman','4485','306')
-insert into GIGI_NAMES values('1','jeju','33.507023','126.492958','010','010',sysdate) 
+insert into GIGI_NAMES values(sq_giginame_num.nextval,'1','35.1104375','126.8778125','55.12','34.2','43.72','306',7,sysdate)
+insert into GIGI_NAMES values(sq_giginame_num.nextval,'2','35.1105375','126.8779125','31.47','35.8','53.47','306',3,sysdate)
+insert into GIGI_NAMES values(sq_giginame_num.nextval,'3','35.1107375','126.8781125','19.74','36.3','49.23','306',13,sysdate)
 

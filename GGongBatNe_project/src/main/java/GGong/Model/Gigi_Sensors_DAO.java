@@ -50,7 +50,7 @@ public class Gigi_Sensors_DAO {
 		conn();
 
 		try {
-			String sql = "insert into GIGI_SENSORS values(sq_gigisen_num.nextval, ?, ?, ?, ?, ?, sysdate)";
+			String sql = "insert into GIGI_SENSORS values(?, ?, ?, ?, ?, ?, sysdate)";
 			
 			psmt = conn.prepareStatement(sql);
 			
@@ -58,7 +58,8 @@ public class Gigi_Sensors_DAO {
 			psmt.setString(2, dto.getGigi_vol());
 			psmt.setString(3, dto.getGigi_temp());
 			psmt.setString(4, dto.getGigi_hum());
-			psmt.setString(5, dto.getGigi_area());
+			psmt.setString(5, dto.getGigi_check());
+			psmt.setString(6, dto.getGigi_area());
 
 			cnt = psmt.executeUpdate();
 
@@ -95,10 +96,11 @@ public class Gigi_Sensors_DAO {
 				String gigi_temp= rs.getString("GIGI_temp");
 				String gigi_hum = rs.getString("GIGI_hum");
 				String gigi_area = rs.getString("GIGI_area");
-				String gigi_date = rs.getString("gigi_date");
+				String gigi_check = rs.getString("GIGI_check");
+				String gigi_date = rs.getString("GIGI_date");
 				
 				
-				Gigi_Sensors_DTO sensor_dto = new Gigi_Sensors_DTO(gigi_num, gigi_name, gigi_vol, gigi_temp, gigi_hum, gigi_area, gigi_date);
+				Gigi_Sensors_DTO sensor_dto = new Gigi_Sensors_DTO(gigi_name, gigi_vol, gigi_temp, gigi_hum, gigi_area, gigi_check, gigi_date);
 				
 				list.add(sensor_dto);
 				

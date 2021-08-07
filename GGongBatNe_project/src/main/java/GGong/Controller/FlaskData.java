@@ -21,8 +21,8 @@ public class FlaskData extends HttpServlet {
 		
 		int name_cnt =0;
 		int sen_cnt =0;
-		
-		String gigi_name =request.getParameter("gigi_name"); 
+		String gigi_name;
+			   gigi_name =request.getParameter("gigi_name"); 
 		String gigi_vol =request.getParameter("gigi_vol"); 
 		String gigi_temp =request.getParameter("gigi_temp"); 
 		String gigi_hum = request.getParameter("gigi_hum"); 
@@ -39,14 +39,17 @@ public class FlaskData extends HttpServlet {
 		System.out.println("기기 담당지역 : "+gigi_area);
 		System.out.println("==================================================");
 		
+		
+		
 		Gigi_Sensors_DTO sen_dto = new Gigi_Sensors_DTO(gigi_name, gigi_vol, gigi_temp, gigi_hum, gigi_area);
 		Gigi_Sensors_DAO sen_dao = new Gigi_Sensors_DAO();
 		sen_cnt = sen_dao.insert(sen_dto);
 		
-		Gigi_Names_DTO name_dto = new Gigi_Names_DTO(gigi_name, gigi_location_a, gigi_location_b);
+		Gigi_Names_DTO name_dto = new Gigi_Names_DTO(gigi_name, gigi_location_a, gigi_location_b, gigi_vol, gigi_temp, gigi_hum, gigi_area);
 		Gigi_Names_DAO name_dao = new Gigi_Names_DAO();
 		
 		name_cnt = name_dao.update(name_dto);
+		
 		
 		
 		if(name_cnt>0) {
