@@ -15,9 +15,7 @@
 -->
 <html>
 
-<style>
-
-</style>
+<link rel="stylesheet" href="assets/css/whether.css" />
 
 	<head>
 		<title>Generic - Alpha by HTML5 UP</title>
@@ -82,9 +80,41 @@
 						<h2>Generic</h2>
 						
 						<section>
-						<img id="weather"  width="60" height="60" >
-						<P class = "wether"></P>
-						</section>
+					<div class="weather" style="height: 100px;">
+						<div id="slide_wrap">
+							<div id="slideGroupView">
+								<div id="slideGroup">
+									<div class='slideItem' style="position: absolute">
+										<div style="display: inline-block;">
+											<div class='CurrIcon Icon'></div>
+										</div>
+										<div class='CurrTemp'></div>
+										<div style="display: inline-block;">
+											<div class='Currweather' style="float: right;"></div>
+											<br>
+											<div class='City' style="float: right;"></div>
+										</div>
+									</div>
+									<div class='slideItem'>
+										<div style="display: inline-block;">
+											<img src="images/wi-strong-wind.svg" class='windimg' alt="">
+											<div class='Wind' style="display: block;"></div>
+										</div>
+										<div style="display: inline-block;">
+											<img src="images/wi-humidity.svg" class='humimg' alt="">
+											<div class='CurrHum' style="display: block;"></div>
+										</div>
+										<div style="display: inline-block;">
+											<img src="images/03.svg" class='cloudimg' alt="">
+											<div class='Cloud' style="display: block;"></div>
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
 						
 					</header>
 					<div class="box">
@@ -171,6 +201,7 @@
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.dropotron.min.js"></script>
 			<script src="assets/js/weather.js"></script>
+			<script src="assets/js/slide.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
