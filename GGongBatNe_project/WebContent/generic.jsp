@@ -27,14 +27,12 @@
 	
 	<body class="is-preload">
 	<%
+	request.setCharacterEncoding("utf-8");
 	Members_DTO mem_dto = (Members_DTO) session.getAttribute("mem_dto"); 
 	
 	
     Gigi_Names_DAO name_dao = new Gigi_Names_DAO();
 	ArrayList<Gigi_Names_DTO> gigi_list = name_dao.select(mem_dto.getMem_area());
-
-	Gigi_Sensors_DAO sensor_dao = new Gigi_Sensors_DAO();
-	ArrayList<Gigi_Sensors_DTO> gigi_seneors = sensor_dao.select(mem_dto.getMem_area());
 	
 	System.out.println(gigi_list.get(0).getGigi_name());
 	
@@ -150,11 +148,11 @@
 											
 									
 								</thead>
-								<%for(int i=0; i<gigi_seneors.size(); i++){ %>
+								<%for(int i=0; i<gigi_list.size(); i++){ %>
 									<tr>
 										<td><%= i+1 %></td>
-										<td><%= gigi_seneors.get(i).getGigi_name() %></td>
-										<td><%= gigi_seneors.get(i).getGigi_vol() %> %</td>
+										<td><%= gigi_list.get(i).getGigi_name() %></td>
+										<td><%= gigi_list.get(i).getGigi_vol() %> %</td>
 										<td><%= mem_dto.getMem_name() %></td>
 									</tr>
 										
@@ -320,7 +318,7 @@
 				
 				var mapContainer = document.getElementById('map'), // 지도를 표시할 div  
 			    mapOption = { 
-			        center: new kakao.maps.LatLng(33.507014, 126.492953), // 지도의 중심좌표
+			        center: new kakao.maps.LatLng(35.1104375, 126.8778125), // 지도의 중심좌표
 			        level: 3, // 지도의 확대 레벨
 			        maxLevel : 12
 			    };
@@ -331,49 +329,47 @@
 			// 마커 이미지 바꾸기
 			
 			var markerImageSrc = 'https://i.ibb.co/VjD3JNj/blue.png'; 
-			
+			var bluemarkerImageSrc = 'https://ifh.cc/g/jhZxaD.png';
+			var yellowmarkerImageSrc = 'https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png';
+			var redmarkerImageSrc = 'https://ifh.cc/g/P8ZmrH.png';
 			
 			function createMarkerImage(src, size, options) {
 			    var markerImage = new kakao.maps.MarkerImage(src, size, options);
 			    return markerImage;            
 			}
 			
-			var imageSize = new kakao.maps.Size(50, 44),
+			var imageSize = new kakao.maps.Size(24, 35),
             	imageOptions = {  
                 spriteOrigin: new kakao.maps.Point(0, 0),    
-                spriteSize: new kakao.maps.Size(50, 44)  };
+                spriteSize: new kakao.maps.Size(24, 35)  };
 			 
-			var markerImage = createMarkerImage(markerImageSrc, imageSize, imageOptions);
+			var bluemarkerImage = createMarkerImage(bluemarkerImageSrc, imageSize, imageOptions);
+			var yellowmarkerImage = createMarkerImage(yellowmarkerImageSrc, imageSize, imageOptions);
+			var redmarkerImage = createMarkerImage(redmarkerImageSrc, imageSize, imageOptions);
+			
 			
 			console.log("asasas");
 			
 			// 마커를 표시할 위치와 내용을 가지고 있는 객체 배열입니다 
-			var positions = [
-// 			    {
-// 			        content: '<div>카카오</div>', 
-// 			        latlng: new kakao.maps.LatLng(33.450705, 126.570677)
-// 			    },
-// 			    {
-// 			        content: '<div>생태연못</div>', 
-// 			        latlng: new kakao.maps.LatLng(33.450936, 126.569477)
-// 			    },
-// 			    {
-// 			        content: '<div>텃밭</div>', 
-// 			        latlng: new kakao.maps.LatLng(33.450879, 126.569940)
-// 			    },
-// 			    {
-// 			        content: '<div>근린공원</div>',
-// 			        latlng: new kakao.maps.LatLng(33.451393, 126.570738)
-// 			    }
-			];
+			var positions = [];
 					
 			<%
 			for (int i = 0; i < gigi_list.size(); i++) {
 			%> 
 				var na = <%=gigi_list.get(i).getGigi_name()%>;
+				
+				
 				var abc = {content : '<div>'+na+'</div>',
 						latlng : new kakao.maps.LatLng( <%=gigi_list.get(i).getGigi_location_A()%>,<%=gigi_list.get(i).getGigi_location_B()%>),
-             	        image	: markerImage
+             	        image	: 
+             	        	
+             	        	<% if(Integer.parseInt(gigi_list.get(i).getGigi_vol()) > 70){%>
+             	        	createMarkerImage(redmarkerImageSrc, imageSize, imageOptions)
+             	        	<% }else if(Integer.parseInt(gigi_list.get(i).getGigi_vol()) > 25){%>
+             	        	createMarkerImage(yellowmarkerImageSrc, imageSize, imageOptions)
+             	        	<% }else{%>
+             	        	createMarkerImage(bluemarkerImageSrc, imageSize, imageOptions)
+             	        	<%}%>
 								
 //	new kakako.maps.MaekerImage(imageSrc, imageSize, imageOption)(if문으로 마커 결정 하기)						
 				
