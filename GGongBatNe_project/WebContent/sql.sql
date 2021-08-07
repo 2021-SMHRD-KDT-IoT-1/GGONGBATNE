@@ -110,7 +110,7 @@ drop sequence sq_gigisen_num;
 drop sequence sq_giginame_num;
 
 insert into MEMBERS values('smhrd','1234','hongman','4485','306')
-insert into GIGI_NAMES values(sq_giginame_num.nextval,'1','35.1104375','126.8778125','55.12','34.2','43.72','306',7,sysdate)
-insert into GIGI_NAMES values(sq_giginame_num.nextval,'2','35.1105375','126.8779125','31.47','35.8','53.47','306',3,sysdate)
-insert into GIGI_NAMES values(sq_giginame_num.nextval,'3','35.1107375','126.8781125','19.74','36.3','49.23','306',13,sysdate)
+insert into GIGI_NAMES values(sq_giginame_num.nextval,'1','35.1104375','126.8778125','76','34.2','43.72','306',7,sysdate)
+insert into GIGI_NAMES values(sq_giginame_num.nextval,'2','35.1105375','126.8779125','21','35.8','53.47','306',3,sysdate)
+insert into GIGI_NAMES values(sq_giginame_num.nextval,'3','35.1107375','126.8781125','47','36.3','49.23','306',13,sysdate)
 

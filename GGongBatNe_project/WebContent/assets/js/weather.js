@@ -15,7 +15,7 @@ $(document).ready(function() {
 
 
 	$.ajax({
-		url: "https://api.openweathermap.org/data/2.5/weather?q=Gwangju&appid=7169ea80614cc1b2d0691229825bc67a&units=metric",
+		url: "https://api.openweathermap.org/data/2.5/weather?q=Gwangju&appid=c71c6725042e4d62050f56ebb25a134c&units=metric",
 		dataType: "json",
 		type: "GET",
 		async: "false",
