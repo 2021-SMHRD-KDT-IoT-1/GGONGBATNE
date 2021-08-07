@@ -42,7 +42,7 @@
 	
 	
 	<!--  카카오 맵 api 불러오기 -->
-	<script type='text/javascript'src='//dapi.kakao.com/v2/maps/sdk.js?appkey=9251a02f01537afedfa5e0e6b3874711'></script>
+	<script type='text/javascript'src='//dapi.kakao.com/v2/maps/sdk.js?appkey=e99022b6f91dd955ccad95591a8ecb63'></script>
 
 	
 	
@@ -131,8 +131,7 @@
 					</section>
 					<section class="sec2">
 
-						<div id="device_div"
-							style="overflow: auto">
+						<div id="device_div" style="overflow: auto; height : 550px">
 							<table id="kkk">
 								<thead>
 									<!-- 첫번째 행 -->
@@ -356,7 +355,7 @@
 			<%
 			for (int i = 0; i < gigi_list.size(); i++) {
 			%> 
-				var na = <%=gigi_list.get(i).getGigi_name()%>;
+				var na = '<%=gigi_list.get(i).getGigi_name()%>';
 				
 				
 				var abc = {content : '<div>'+na+'</div>',
@@ -424,7 +423,7 @@ var count12 = [];
 
 <%
 for (int i = 0; i < gigi_list.size(); i++) {
-%>	var n=<%=gigi_list.get(i).getGigi_name()%>;
+%>	var n='<%=gigi_list.get(i).getGigi_name()%>';
 	name12.push(n);
 	console.log("aaaa"+name12);
 <%	
