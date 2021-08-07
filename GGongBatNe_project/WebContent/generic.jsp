@@ -1,4 +1,5 @@
 
+<%@page import="GGong.Model.Members_DAO"%>
 <%@page import="GGong.Model.Gigi_Sensors_DTO"%>
 <%@page import="GGong.Model.Gigi_Sensors_DAO"%>
 <%@page import="java.util.ArrayList"%>
@@ -36,6 +37,11 @@
 	
 	System.out.println(gigi_list.get(0).getGigi_name());
 	
+	Members_DTO dto = (Members_DTO)session.getAttribute("mem_dto");
+
+	
+
+	
 	%>
 	
 	
@@ -67,7 +73,11 @@
 							<li><a href="service.jsp">고객센터</a></li>
 								
 						</ul></li>
+						<% if(dto !=null) {%>
+					<li><a href="LogoutServiceCon" class="button">Logout</a></li>
+					<%}else{ %>
 					<li><a href="login.jsp" class="button">Login</a></li>
+					<%} %>
 				</ul>
 			</nav>
 		</header>
@@ -86,11 +96,11 @@
 										<div style="display: inline-block;">
 											<div class='CurrIcon Icon'></div>
 										</div>
-										<div class='CurrTemp'></div>
+										<div class='CurrTemp' style = "margin-right: 15px;"></div>
 										<div style="display: inline-block;">
 											<div class='Currweather' style="float: right;"></div>
 											<br>
-											<div class='City' style="float: right;"></div>
+											<div class='City' style="float: right; margin-right: 10px;"></div>
 										</div>
 									</div>
 									<div class='slideItem'>
