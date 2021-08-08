@@ -69,7 +69,7 @@
 					<li><a href="index.jsp">Home</a></li>
 					<li><a href="#" class="icon solid fa-angle-down">Menu</a>
 						<ul>
-							<li><a href="generic.jsp">지도</a></li>
+							<li><a href="generic.jsp">하수구 관리</a></li>
 							<li><a href="service.jsp">고객센터</a></li>
 								
 						</ul></li>
@@ -320,19 +320,19 @@
 // 								});
 				
 				
-// ======================================================== 지도 연습				
+// ======================================================== 하수구 관리 연습				
 				
 
 				
 				
-				var mapContainer = document.getElementById('map'), // 지도를 표시할 div  
+				var mapContainer = document.getElementById('map'), // 하수구 관리를 표시할 div  
 			    mapOption = { 
-			        center: new kakao.maps.LatLng(35.1104375, 126.8778125), // 지도의 중심좌표
-			        level: 3, // 지도의 확대 레벨
+			        center: new kakao.maps.LatLng(35.1104375, 126.8778125), // 하수구 관리의 중심좌표
+			        level: 3, // 하수구 관리의 확대 레벨
 			        maxLevel : 12
 			    };
 
-			var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+			var map = new kakao.maps.Map(mapContainer, mapOption); // 하수구 관리를 생성합니다
 			
 			
 			// 마커 이미지 바꾸기
@@ -390,7 +390,7 @@
 			for (var i = 0; i < positions.length; i ++) {
 			    // 마커를 생성합니다
 			    var marker = new kakao.maps.Marker({
-			        map: map, // 마커를 표시할 지도
+			        map: map, // 마커를 표시할 하수구 관리
 			        position: positions[i].latlng, // 마커의 위치
 			      	image: positions[i].image
 			    });  // 위치랑 마우스 올렸을때 나오는곳 배열 저장

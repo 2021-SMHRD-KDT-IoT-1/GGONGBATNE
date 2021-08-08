@@ -35,7 +35,7 @@
 						
 						<%if(dto !=null) {%>
 						<ul>
-							<li><a href="generic.jsp">지도</a></li>
+							<li><a href="generic.jsp">하수구 관리</a></li>
 							<li><a href="service.jsp">고객센터</a></li>
 								
 						</ul></li>
@@ -44,7 +44,7 @@
 						<%}else{ %>
 						
 							<ul>
-							<li><a href="generic.jsp">지도</a></li>
+							<li><a href="generic.jsp">하수구 관리</a></li>
 							<li><a href="service.jsp">고객센터</a></li>
 								
 						</ul></li>
@@ -66,7 +66,7 @@
 
 			<ul class="actions special">
 				<li><a href="index.jsp" class="button primary">HOME</a></li>
-				<li><a href="generic.jsp" class="button">지도</a></li>
+				<li><a href="generic.jsp" class="button">하수구 관리</a></li>
 				<li><a href="service.jsp" class="button">고객센터</a></li>
 
 			</ul>
@@ -83,12 +83,12 @@
 				<header class="major">
 					<h2>담배 꽁초가 하수구를 타고 바다를 건너 다시 우리 입으로?!</h2>
 					<p>
-						[GGongBatNe] 하수구 꽁초 관련 문의 : 062-XXX-XXXX  설치문의 : 062-XXX-XXX1 
-						
+						[GGongBatNe] 하수구 꽁초 관련 문의 : 010-9657-9600  설치문의 : 010-9657-9600						
 					</p>
 					
+					
 					<p>
-					[관할구청] 동구청 : 062-XXX-XXX 북구청: 062-XXX-XXX</p>
+					[관할구청] 스마트 인재 개발원 : 062-XXX-XXXX</p>
 				</header>
 				<span class="image featured"><img src="images/ad01.jpg"
 					alt="" /></span>
