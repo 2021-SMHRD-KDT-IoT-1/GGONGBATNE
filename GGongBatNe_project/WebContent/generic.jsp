@@ -372,9 +372,9 @@
 						latlng : new kakao.maps.LatLng( <%=gigi_list.get(i).getGigi_location_A()%>,<%=gigi_list.get(i).getGigi_location_B()%>),
              	        image	: 
              	        	
-             	        	<% if(Integer.parseInt(gigi_list.get(i).getGigi_vol()) > 70){%>
+             	        	<% if(Integer.parseInt(gigi_list.get(i).getGigi_vol()) > 69){%>
              	        	createMarkerImage(redmarkerImageSrc, imageSize, imageOptions)
-             	        	<% }else if(Integer.parseInt(gigi_list.get(i).getGigi_vol()) > 25){%>
+             	        	<% }else if(Integer.parseInt(gigi_list.get(i).getGigi_vol()) > 29){%>
              	        	createMarkerImage(yellowmarkerImageSrc, imageSize, imageOptions)
              	        	<% }else{%>
              	        	createMarkerImage(bluemarkerImageSrc, imageSize, imageOptions)

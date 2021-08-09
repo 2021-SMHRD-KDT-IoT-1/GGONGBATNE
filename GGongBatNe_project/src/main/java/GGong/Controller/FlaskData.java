@@ -30,7 +30,9 @@ public class FlaskData extends HttpServlet {
 		String gigi_location_a = request.getParameter("gigi_location_a"); 
 		String gigi_location_b = request.getParameter("gigi_location_b");
 		
-		
+		float gigi_vol2 = Float.parseFloat(gigi_vol);
+		float gigi_vol3=(45-gigi_vol2)/30*100f;
+		String gigi_vol4 = Float.toString(gigi_vol3);
 		
 		System.out.println("기기 이름 : "+gigi_name);
 		System.out.println("기기 용량 : "+gigi_vol + "%");
@@ -49,7 +51,7 @@ public class FlaskData extends HttpServlet {
 		}else {
 			System.out.println("데이터 들어왔음");
 			
-			String gigi_vol1 = gigi_vol.substring(0, 2);
+			String gigi_vol1 = gigi_vol4.substring(0, 2);
 			System.out.println(gigi_vol1);
 			Gigi_Sensors_DTO sen_dto = new Gigi_Sensors_DTO(gigi_name, gigi_vol1, gigi_temp, gigi_hum, gigi_area);
 			Gigi_Sensors_DAO sen_dao = new Gigi_Sensors_DAO();
