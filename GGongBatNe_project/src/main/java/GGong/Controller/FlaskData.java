@@ -49,8 +49,8 @@ public class FlaskData extends HttpServlet {
 		}else {
 			System.out.println("데이터 들어왔음");
 			
-			String[] gigi_vol_list = gigi_vol.split(".");
-			String gigi_vol1=gigi_vol_list[0];
+			String gigi_vol1 = gigi_vol.substring(0, 2);
+			System.out.println(gigi_vol1);
 			Gigi_Sensors_DTO sen_dto = new Gigi_Sensors_DTO(gigi_name, gigi_vol1, gigi_temp, gigi_hum, gigi_area);
 			Gigi_Sensors_DAO sen_dao = new Gigi_Sensors_DAO();
 			sen_cnt = sen_dao.insert(sen_dto);

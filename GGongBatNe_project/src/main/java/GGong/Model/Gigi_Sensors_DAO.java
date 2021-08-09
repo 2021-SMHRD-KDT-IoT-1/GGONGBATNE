@@ -50,7 +50,7 @@ public class Gigi_Sensors_DAO {
 		conn();
 
 		try {
-			String sql = "insert into GIGI_SENSORS values(?, ?, ?, ?, ?, ?, sysdate)";
+			String sql = "insert into GIGI_SENSORS(GIGI_name, Gigi_vol, Gigi_temp, Gigi_hum, Gigi_area, gigi_date) values(?, ?, ?, ?, ?, sysdate)";
 			
 			psmt = conn.prepareStatement(sql);
 			
@@ -58,8 +58,7 @@ public class Gigi_Sensors_DAO {
 			psmt.setString(2, dto.getGigi_vol());
 			psmt.setString(3, dto.getGigi_temp());
 			psmt.setString(4, dto.getGigi_hum());
-			psmt.setString(5, dto.getGigi_check());
-			psmt.setString(6, dto.getGigi_area());
+			psmt.setString(5, dto.getGigi_area());
 
 			cnt = psmt.executeUpdate();
 
