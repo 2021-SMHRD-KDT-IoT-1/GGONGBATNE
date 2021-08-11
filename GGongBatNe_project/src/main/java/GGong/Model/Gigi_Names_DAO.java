@@ -45,6 +45,33 @@ public class Gigi_Names_DAO {
 		}
 	}
 	
+	public int selectCount(String GIGI_NAME) {
+		conn();
+		int gigi_count=0;
+		
+		try {
+			String sql = "select GIGI_COUNT from Gigi_Names where GIGI_NAME = ?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, GIGI_NAME );
+			
+			rs = psmt.executeQuery();
+			
+			while(rs.next()) {
+
+				gigi_count = rs.getInt("GIGI_count");
+
+			}
+		
+		} catch(SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		
+		return gigi_count;
+	
+	}
+	
 	public  ArrayList<Gigi_Names_DTO> select(String GIGI_AREA) {
 		ArrayList<Gigi_Names_DTO> list = new ArrayList<Gigi_Names_DTO>();
 		conn();
@@ -118,6 +145,30 @@ public class Gigi_Names_DAO {
 	
 	}
 	
+public  int updateCount(String GIGI_NAME, int GIGI_COUNT) {
+		
+		conn();
+		
+		try {
+			String sql = "update GIGI_NAMES set GIGI_COUNT=?, GIGI_CHECK=sysdate where GIGI_NAME=?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setInt(1, GIGI_COUNT);
+			psmt.setString(2,GIGI_NAME);
+			
+			cnt = psmt.executeUpdate();
+			
+		
+
+		
+		} catch(SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		
+		return cnt;
+	
+	}
 	
 	
 	
