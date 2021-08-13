@@ -34,11 +34,11 @@ public class QRLastCheck extends HttpServlet {
 				int result = dao.updateCount(gigi_name,cnt);
 				PrintWriter out = response.getWriter(); 
 				if(result>0) {					
-					out.println("수거 체크 완료");
-
+					out.println("<h1>수거 체크 완료</h1>");
+					
 					System.out.println("수거 체크 완료");
 				}else {
-					out.println("수거 체크 실패,,,");
+					out.println("<h1>수거 체크 실패,,,</h1>");
 					System.out.println("수거 체크 실패");
 				}
 			}

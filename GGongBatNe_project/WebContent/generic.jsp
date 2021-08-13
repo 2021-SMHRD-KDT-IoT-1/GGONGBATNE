@@ -149,6 +149,7 @@
 										<td>No.</td>
 										<td>기기명</td>
 										<td>현재 상태</td>
+										<td>현재 온도</td>
 										<td>담당자</td>
 									</tr>
 											
@@ -162,6 +163,7 @@
 										<td><%= i+1 %></td>
 										<td><%= gigi_list.get(i).getGigi_name() %></td>
 										<td><%= gigi_list.get(i).getGigi_vol() %> %</td>
+										<td><%= gigi_list.get(i).getGigi_temp() %> ˚C</td>
 										<td><%= mem_dto.getMem_name() %></td>
 									</tr>
 										
@@ -372,7 +374,7 @@
 						latlng : new kakao.maps.LatLng( <%=gigi_list.get(i).getGigi_location_A()%>,<%=gigi_list.get(i).getGigi_location_B()%>),
              	        image	: 
              	        	
-             	        	<% if(Integer.parseInt(gigi_list.get(i).getGigi_vol()) > 55){%>
+             	        	<% if(Integer.parseInt(gigi_list.get(i).getGigi_vol()) > 60){%>
              	        	createMarkerImage(redmarkerImageSrc, imageSize, imageOptions)
              	        	<% }else if(Integer.parseInt(gigi_list.get(i).getGigi_vol()) > 24){%>
              	        	createMarkerImage(yellowmarkerImageSrc, imageSize, imageOptions)
